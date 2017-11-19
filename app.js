@@ -51,16 +51,16 @@ app.use(session({
   })
 }));
 
-// app.use((req, res, next) => {
-//   if (req.session.currentUser) {
-//     res.locals.currentUserInfo = req.session.currentUser;
-//     res.locals.isUserLoggedIn = true;
-//   } else {
-//     res.locals.isUserLoggedIn = false;
-//   }
+app.use((req, res, next) => {
+  if (req.session.currentUser) {
+    res.locals.currentUserInfo = req.session.currentUser;
+    res.locals.isUserLoggedIn = true;
+  } else {
+    res.locals.isUserLoggedIn = false;
+  }
 
-//   next();
-// });
+  next();
+});
 
 // Passport configuration
 passport.serializeUser((user, cb) => {
@@ -74,23 +74,26 @@ passport.deserializeUser((id, cb) => {
   });
 });
 
-passport.use(new LocalStrategy({
-  passReqToCallback: true
-}, (email, password, next) => {
-  User.findOne({ email }, (err, user) => {
-    if (err) {
-      return next(err);
-    }
-    if (!user) {
-      return next(null, false, { message: 'Incorrect email' });
-    }
-    if (!bcrypt.compareSync(password, user.password)) {
-      return next(null, false, { message: 'Incorrect password' });
-    }
+passport.use(new LocalStrategy(
+  // {
+  //   usernameField: 'email',
+  //   passwordField: 'password'
+  // },
+  (username, password, next) => {
+    User.findOne({ username }, (err, user) => {
+      if (err) {
+        return next(err);
+      }
+      if (!user) {
+        return next(null, false, { message: 'Incorrect username' });
+      }
+      if (!bcrypt.compareSync(password, user.password)) {
+        return next(null, false, { message: 'Incorrect password' });
+      }
 
-    return next(null, user);
-  });
-}));
+      return next(null, user);
+    });
+  }));
 
 // Initialize Passport and Passport Session
 app.use(passport.initialize());
