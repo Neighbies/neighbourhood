@@ -8,7 +8,7 @@ const userSchema = new Schema({
   password: String,
   prof_pic_path: String,
   prof_pic_name: String,
-  tasks: [String]
+  things: [String]
 }, {
   timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
 });
