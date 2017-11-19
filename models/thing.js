@@ -4,7 +4,9 @@ const Schema = mongoose.Schema;
 const thingSchema = new Schema({
   title: String,
   localitzation: { coordinates: [Number] },
-  categories: [String],
+  categories: [
+    { type: mongoose.Schema.Types.ObjectId, ref: 'Category' }
+  ],
   price: Number
 }, {
   timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }

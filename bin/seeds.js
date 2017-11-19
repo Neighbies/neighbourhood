@@ -10,93 +10,106 @@ const Category = require('../models/category');
 const Thing = require('../models/thing');
 const User = require('../models/user');
 
-const categories = [
-  {
-    title: 'category1',
-    pic_path: '',
-    pic_name: ''
-  },
-  {
-    title: 'category2',
-    pic_path: '',
-    pic_name: ''
-  }
-];
+// const categories = [
+//   {
+//     title: 'category1',
+//     pic_path: '',
+//     pic_name: ''
+//   }
+// ];
 
-const things = [
-  {
-    title: 'thing1',
-    localitzation: [],
-    categories: [
-      { type: mongoose.Schema.Types.ObjectId, ref: 'Category' }
-    ],
-    price: 8
-  },
-  {
+// const things = [
+//   {
+//     title: 'thing1',
+//     localitzation: [],
+//     categories: [categories._id],
+//     price: 8
+//   }
+// ];
+
+// const users = [
+//   {
+//     username: 'user1',
+//     email: '',
+//     telephone: '',
+//     password: bcrypt.hashSync('', salt),
+//     prof_pic_path: '',
+//     prof_pic_name: '',
+//     things: [things._id]
+//   }
+// ];
+
+const category = new Category({
+  _id: new mongoose.Types.ObjectId(),
+  title: 'category2',
+  pic_path: '',
+  pic_name: ''
+});
+
+category.save((err) => {
+  if (err) {
+    return err;
+  }
+
+  const thing = new Thing({
     title: 'thing2',
     localitzation: [],
-    categories: [
-      { type: mongoose.Schema.Types.ObjectId, ref: 'Category' }
-    ],
-    price: 7
-  }
-];
-
-const users = [
-  {
-    username: 'user1',
-    email: '',
-    telephone: '',
-    password: bcrypt.hashSync('', salt),
-    prof_pic_path: '',
-    prof_pic_name: '',
-    things: [
-      { type: mongoose.Schema.Types.ObjectId, ref: 'Thing' }
-    ]
-  },
-  {
-    username: 'user2',
-    email: '',
-    telephone: '',
-    password: bcrypt.hashSync('', salt),
-    prof_pic_path: '',
-    prof_pic_name: '',
-    things: [
-      { type: mongoose.Schema.Types.ObjectId, ref: 'Thing' },
-      { type: mongoose.Schema.Types.ObjectId, ref: 'Thing' }
-    ]
-  }
-];
-
-Category.create(categories, (err, docs) => {
-  if (err) {
-    throw err;
-  }
-
-  docs.forEach((categories) => {
-    console.log(categories.title);
+    categories: [category._id],
+    price: 8
   });
-  mongoose.connection.close();
+
+  thing.save((err) => {
+    if (err) {
+      return err;
+    }
+
+    const user = new User({
+      username: 'user2',
+      email: '',
+      telephone: '',
+      password: bcrypt.hashSync('', salt),
+      prof_pic_path: '',
+      prof_pic_name: '',
+      things: [thing._id]
+    });
+
+    user.save((err) => {
+      if (err) {
+        return err;
+      }
+    });
+  });
 });
 
-Thing.create(things, (err, docs) => {
-  if (err) {
-    throw err;
-  }
+// Category.create(categories, (err, docs) => {
+//   if (err) {
+//     throw err;
+//   }
 
-  docs.forEach((things) => {
-    console.log(things.title);
-  });
-  mongoose.connection.close();
-});
+//   docs.forEach((categories) => {
+//     console.log(categories.title);
+//   });
+//   mongoose.connection.close();
+// });
 
-User.create(users, (err, docs) => {
-  if (err) {
-    throw err;
-  }
+// Thing.create(things, (err, docs) => {
+//   if (err) {
+//     throw err;
+//   }
 
-  docs.forEach((users) => {
-    console.log(users.username);
-  });
-  mongoose.connection.close();
-});
+//   docs.forEach((things) => {
+//     console.log(things.title);
+//   });
+//   mongoose.connection.close();
+// });
+
+// User.create(users, (err, docs) => {
+//   if (err) {
+//     throw err;
+//   }
+
+//   docs.forEach((users) => {
+//     console.log(users.username);
+//   });
+//   mongoose.connection.close();
+// });

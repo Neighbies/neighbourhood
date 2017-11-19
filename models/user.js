@@ -8,7 +8,9 @@ const userSchema = new Schema({
   password: String,
   prof_pic_path: String,
   prof_pic_name: String,
-  things: [String]
+  things: [
+    { type: mongoose.Schema.Types.ObjectId, ref: 'Thing' }
+  ]
 }, {
   timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
 });
