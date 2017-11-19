@@ -19,6 +19,23 @@ router.get('/login', (req, res, next) => {
   });
 });
 
+// --- GET logout --- //
+router.get('/logout', (req, res, next) => {
+  if (!req.session.currentUser) {
+    res.redirect('/'); // If user not logged in
+    return;
+  }
+
+  req.session.destroy((err) => {
+    if (err) { // If error occurres while loggin out
+      next(err);
+      return;
+    }
+
+    res.redirect('/'); // Logged out
+  });
+});
+
 // --- POST signup form --- //
 router.post('/signup', (req, res, next) => {
   const usernameInput = req.body.username;
