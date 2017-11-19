@@ -1,10 +1,17 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const Category = require('../models/category');
+// const User = require('../models/user');
 
-/* GET home page. */
+// --- GET home page --- //
 router.get('/', (req, res, next) => {
   if (req.isAuthenticated()) {
-    res.render('index', { title: 'Express', loggedIn: true });
+    Category.find({}, (err, category) => {
+      if (err) {
+        return next(err);
+      }
+      res.render('index', { title: 'Express', loggedIn: true, categories: category });
+    });
   } else {
     res.render('index', { title: 'Express', loggedIn: false });
   }

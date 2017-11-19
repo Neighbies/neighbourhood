@@ -5,13 +5,11 @@ const ensureLogin = require('connect-ensure-login');
 const bcrypt = require('bcrypt');
 const bcryptSalt = 10;
 
-const User = require('../models/user.js');
+const User = require('../models/user');
 
 // --- GET signup form --- //
 router.get('/signup', (req, res, next) => {
-  res.render('auth/signup', {
-    'message': req.flash('error')
-  });
+  res.render('auth/signup');
 });
 
 // --- GET login form --- //

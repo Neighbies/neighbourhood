@@ -21,7 +21,15 @@
     <a href="/login">Log in</a>
     <% } else { %>
       <a href="/logout">Log out</a>
-      <% } %>
+      <h2>Categories</h2>
+
+      <% categories.forEach(category => { %>
+        <%= category.id %>
+          <a href="/things/<%=category.id%>">
+            <%= category.title %>
+          </a>
+          <% }); %>
+            <% } %>
 </body>
 
 </html>

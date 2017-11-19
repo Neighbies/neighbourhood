@@ -12,7 +12,12 @@ const User = require('../models/user');
 
 const categories = [
   {
-    title: '',
+    title: 'category1',
+    pic_path: '',
+    pic_name: ''
+  },
+  {
+    title: 'category2',
     pic_path: '',
     pic_name: ''
   }
@@ -20,22 +25,46 @@ const categories = [
 
 const things = [
   {
-    title: '',
+    title: 'thing1',
     localitzation: [],
-    categories: [],
+    categories: [
+      { type: mongoose.Schema.Types.ObjectId, ref: 'Category' }
+    ],
     price: 8
+  },
+  {
+    title: 'thing2',
+    localitzation: [],
+    categories: [
+      { type: mongoose.Schema.Types.ObjectId, ref: 'Category' }
+    ],
+    price: 7
   }
 ];
 
 const users = [
   {
-    username: '',
+    username: 'user1',
     email: '',
     telephone: '',
     password: bcrypt.hashSync('', salt),
     prof_pic_path: '',
     prof_pic_name: '',
-    things: []
+    things: [
+      { type: mongoose.Schema.Types.ObjectId, ref: 'Thing' }
+    ]
+  },
+  {
+    username: 'user2',
+    email: '',
+    telephone: '',
+    password: bcrypt.hashSync('', salt),
+    prof_pic_path: '',
+    prof_pic_name: '',
+    things: [
+      { type: mongoose.Schema.Types.ObjectId, ref: 'Thing' },
+      { type: mongoose.Schema.Types.ObjectId, ref: 'Thing' }
+    ]
   }
 ];
 
