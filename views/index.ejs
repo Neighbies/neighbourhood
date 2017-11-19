@@ -16,7 +16,12 @@
     <%= title %>
   </p>
 
-  <a href="/signup">Sign up</a>
+  <% if (!isUserLoggedIn) { %>
+    <a href="/signup">Sign up</a>
+    <a href="/login">Log in</a>
+    <% } else { %>
+      <a href="/logout">Log out</a>
+      <% } %>
 </body>
 
 </html>

@@ -12,20 +12,27 @@ router.get('/signup', (req, res, next) => {
   });
 });
 
+// --- GET login form --- //
+router.get('/login', (req, res, next) => {
+  res.render('auth/login', {
+    errorMessage: ''
+  });
+});
+
 // --- POST signup form --- //
 router.post('/signup', (req, res, next) => {
-  const username = req.body.username;
-  const email = req.body.email;
-  const password = req.body.password;
+  const usernameInput = req.body.username;
+  const emailInput = req.body.email;
+  const passwordInput = req.body.password;
 
-  if (email === '' || password === '') { // If any of them is empty, show the form
+  if (usernameInput === '' || passwordInput === '') { // If any of them is empty, show the form
     res.render('auth/signup', {
       errorMessage: 'Enter both email and password to sign up.'
     });
     return;
   }
 
-  User.findOne({ email: email }, '_id', (err, existingUser) => {
+  User.findOne({ email: emailInput }, '_id', (err, existingUser) => {
     if (err) { // If any error, display it
       next(err);
       return;
@@ -33,7 +40,7 @@ router.post('/signup', (req, res, next) => {
 
     if (existingUser !== null) { // The user already exists
       res.render('auth/signup', {
-        errorMessage: `The email ${email} is already in use.`
+        errorMessage: `The email ${emailInput} is already in use.`
       });
       return;
     }
@@ -41,11 +48,11 @@ router.post('/signup', (req, res, next) => {
     // If we're here, the user doesn't exist and no error occurred
 
     const salt = bcrypt.genSaltSync(bcryptSalt);
-    const hashedPass = bcrypt.hashSync(password, salt);
+    const hashedPass = bcrypt.hashSync(passwordInput, salt);
 
     const userSubmission = {
-      username: username,
-      email: email,
+      username: usernameInput,
+      email: emailInput,
       password: hashedPass
     };
 
@@ -59,8 +66,41 @@ router.post('/signup', (req, res, next) => {
         return;
       }
 
+      req.session.currentUser = theUser;
       res.redirect('/');
     });
+  });
+});
+
+// --- POST login form --- //
+router.post('/login', (req, res, next) => {
+  const emailInput = req.body.email;
+  const passwordInput = req.body.password;
+
+  if (emailInput === '' || passwordInput === '') { // If any of them is empty, show the form
+    res.render('auth/login', {
+      errorMessage: 'Enter both email and password to log in.'
+    });
+    return;
+  }
+
+  User.findOne({ email: emailInput }, (err, theUser) => {
+    if (err || theUser === null) { // If any error or the user doesn't exist
+      res.render('auth/login', {
+        errorMessage: `There isn't an account with email ${emailInput}.`
+      });
+      return;
+    }
+
+    if (!bcrypt.compareSync(passwordInput, theUser.password)) { // If passwords doesn't match
+      res.render('auth/login', {
+        errorMessage: 'Invalid password.'
+      });
+      return;
+    }
+
+    req.session.currentUser = theUser;
+    res.redirect('/');
   });
 });
 
