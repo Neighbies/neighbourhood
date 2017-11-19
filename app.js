@@ -7,6 +7,12 @@ const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+const bcrypt = require('bcrypt');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const flash = require('connect-flash');
+
+const User = require('./models/user');
 
 // Require routes
 const index = require('./routes/index');
@@ -31,6 +37,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressLayouts);
+app.use(flash());
 
 // Session configuration
 app.use(session({
@@ -44,16 +51,50 @@ app.use(session({
   })
 }));
 
-app.use((req, res, next) => {
-  if (req.session.currentUser) {
-    res.locals.currentUserInfo = req.session.currentUser;
-    res.locals.isUserLoggedIn = true;
-  } else {
-    res.locals.isUserLoggedIn = false;
-  }
+// app.use((req, res, next) => {
+//   if (req.session.currentUser) {
+//     res.locals.currentUserInfo = req.session.currentUser;
+//     res.locals.isUserLoggedIn = true;
+//   } else {
+//     res.locals.isUserLoggedIn = false;
+//   }
 
-  next();
+//   next();
+// });
+
+// Passport configuration
+passport.serializeUser((user, cb) => {
+  cb(null, user._id);
 });
+
+passport.deserializeUser((id, cb) => {
+  User.findOne({ '_id': id }, (err, user) => {
+    if (err) { return cb(err); }
+    cb(null, user);
+  });
+});
+
+passport.use(new LocalStrategy({
+  passReqToCallback: true
+}, (email, password, next) => {
+  User.findOne({ email }, (err, user) => {
+    if (err) {
+      return next(err);
+    }
+    if (!user) {
+      return next(null, false, { message: 'Incorrect email' });
+    }
+    if (!bcrypt.compareSync(password, user.password)) {
+      return next(null, false, { message: 'Incorrect password' });
+    }
+
+    return next(null, user);
+  });
+}));
+
+// Initialize Passport and Passport Session
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Use routes
 app.use('/', index);

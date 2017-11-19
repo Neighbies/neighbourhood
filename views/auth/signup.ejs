@@ -8,7 +8,11 @@
     <label for="password">Password</label>
     <input type="password" name="password" />
 
-    <button type="submit">Sign up</button>
-</form>
+    <% if (typeof message != "undefined") { %>
+        <div class="error-message">
+            <%= message %>
+        </div>
+        <% } %>
 
-<%= errorMessage %>
+            <button type="submit">Sign up</button>
+</form>
