@@ -24,12 +24,11 @@
       <h2>Categories</h2>
 
       <% categories.forEach(category => { %>
-        <%= category.id %>
-          <a href="/things/<%=category.id%>">
-            <%= category.title %>
-          </a>
-          <% }); %>
-            <% } %>
+        <a href="/things/<%=category.id%>">
+          <%= category.title %>
+        </a>
+        <% }); %>
+          <% } %>
 </body>
 
 </html>
