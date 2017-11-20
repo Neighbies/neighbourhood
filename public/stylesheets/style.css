@@ -18,7 +18,35 @@ html {
   border: 1px solid black;
 }*/
 
+.error-status{
+
+}
 
 .error-title{
   color: blue;
+  font-family:  'Roboto Mono', monospace;
+  font-weight: Bold;
+  font-size: 2em;
+
+}
+
+.error-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column
+}
+
+.come-back-button{
+ 
+  cursor: pointer;
+  color: white;
+  background-color: #EF6C00;
+}
+
+.come-back-button-a{
+  font-family: 'Roboto Mono', monospace;
+  font-weight: Medium;
+  text-transform: none;
+  text-decoration: none;
 }
