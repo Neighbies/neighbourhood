@@ -2,9 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const categorySchema = new Schema({
-  title: String,
-  pic_path: String,
-  pic_name: String
+  title: String
 }, {
   timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
 });

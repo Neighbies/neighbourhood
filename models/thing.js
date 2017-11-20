@@ -3,11 +3,14 @@ const Schema = mongoose.Schema;
 
 const thingSchema = new Schema({
   title: String,
-  localitzation: { coordinates: [Number] },
+  localitzation: { type: { type: String }, coordinates: [Number] },
   categories: [
     { type: mongoose.Schema.Types.ObjectId, ref: 'Category' }
   ],
-  price: Number
+  pic_path: String,
+  pic_name: String,
+  price: Number,
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 }, {
   timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
 });
