@@ -28,3 +28,4 @@ desktop.ini
 
 # dotenv
 .env
+.DS_Store
