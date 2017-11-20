@@ -1,34 +1,63 @@
 <div class="background-index">
   <div class="container-index">
-    <div class="index-menu">
-      <img class="logo-menu" src="/pictures/logo-nou.png">
-      <a ref="/">Welcome</a>
-      <a ref="/">About Us</a>
-      <a ref="/">Social</a>
-      <% if (!loggedIn) { %>
-        <a class="signup" href="/signup">Sign up</a>
-        <a class="login" href="/login">Log in</a>
-        <% } else { %>
-          <a class="logout" href="/logout">Log out</a>
-          <h2>Categories</h2>
 
-          <% categories.forEach(category => { %>
-            <a href="/things/<%=category.id%>">
-              <%= category.title %>
-            </a>
-            <% }); %>
-              <% } %>
+    <nav role="navigation">
+      <div id="menuToggle">
+        <!--
+      A fake / hidden checkbox is used as click reciever,
+      so you can use the :checked selector on it.
+      -->
+        <input type="checkbox" />
 
-    </div>
+        <!--Some spans to act as a hamburger. -->
+        <span></span>
+        <span></span>
+        <span></span>
 
-    <img class="logo-index-neighbourhood" src="/pictures/neighbourhood.png">
-    <nav class="navbar navbar-light bg-light">
-      <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="What are you looking for?" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+
+        <ul id="menu">
+          <a href="/">
+            <li>Welcome</li>
+          </a>
+          <a href="/">
+            <li>About Us</li>
+          </a>
+          <a href="/">
+            <li>Social</li>
+          </a>
+          <a href="/">
+            <li>Contact</li>
+          </a>
+          <% if (!loggedIn) { %>
+            <a class="signup" href="/signup">Sign up</a>
+            <a class="login" href="/login">Log in</a>
+            <% } else { %>
+              <a class="logout" href="/logout">Log out</a>
+              <h2>Categories</h2>
+
+              <% categories.forEach(category => { %>
+                <a href="/things/<%=category.id%>">
+                  <%= category.title %>
+                </a>
+                <% }); %>
+                  <% } %>
+        </ul>
+
+
+      </div>
     </nav>
 
+    <div class="index-searcher">
+      <img class="logo-menu" src="/pictures/logo-nou-blanc.png">
+      <img class="logo-index-neighbourhood" src="/pictures/neighbourhood.png">
+
+      <nav class="navbar navbar-light">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2 middle-searcher" type="search" placeholder="What are you looking for?" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0 middle-button" type="submit">Search</button>
+        </form>
+      </nav>
+    </div>
 
 
 
