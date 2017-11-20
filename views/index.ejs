@@ -1,13 +1,36 @@
-<% if (!loggedIn) { %>
-  <a href="/signup">Sign up</a>
-  <a href="/login">Log in</a>
-  <% } else { %>
-    <a href="/logout">Log out</a>
-    <h2>Categories</h2>
+<div class="background-index">
+  <div class="container-index">
+    <div class="index-menu">
+      <img class="logo-menu" src="/pictures/logo-nou.png">
+      <a ref="/">Welcome</a>
+      <a ref="/">About Us</a>
+      <a ref="/">Social</a>
+      <% if (!loggedIn) { %>
+        <a class="signup" href="/signup">Sign up</a>
+        <a class="login" href="/login">Log in</a>
+        <% } else { %>
+          <a class="logout" href="/logout">Log out</a>
+          <h2>Categories</h2>
 
-    <% categories.forEach(category => { %>
-      <a href="/things/<%=category.id%>">
-        <%= category.title %>
-      </a>
-      <% }); %>
-        <% } %>
+          <% categories.forEach(category => { %>
+            <a href="/things/<%=category.id%>">
+              <%= category.title %>
+            </a>
+            <% }); %>
+              <% } %>
+
+    </div>
+
+    <img class="logo-index-neighbourhood" src="/pictures/neighbourhood.png">
+    <nav class="navbar navbar-light bg-light">
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="What are you looking for?" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </nav>
+
+
+
+
+  </div>
+</div>
