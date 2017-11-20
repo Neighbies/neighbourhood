@@ -10,7 +10,8 @@ const userSchema = new Schema({
   prof_pic_name: String,
   things: [
     { type: mongoose.Schema.Types.ObjectId, ref: 'Thing' }
-  ]
+  ],
+  googleID: String
 }, {
   timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
 });

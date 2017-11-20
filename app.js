@@ -12,6 +12,7 @@ const MongoStore = require('connect-mongo')(session);
 const bcrypt = require('bcrypt');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 const User = require('./models/user');
 
@@ -79,6 +80,31 @@ passport.deserializeUser((id, cb) => {
 });
 
 app.use(flash());
+passport.use(new GoogleStrategy({
+  clientID: '453699117097-fr84b90k2lu508c7uacf3pejc60igm4h.apps.googleusercontent.com',
+  clientSecret: 'kg9mD6oT6uXFUOYdqxMKFrut',
+  callbackURL: '/auth/google/callback'
+}, (accessToken, refreshToken, profile, done) => {
+  User.findOne({ googleID: profile.id }, (err, user) => {
+    if (err) {
+      return done(err);
+    }
+    if (user) {
+      return done(null, user);
+    }
+
+    const newUser = new User({
+      googleID: profile.id
+    });
+
+    newUser.save((err) => {
+      if (err) {
+        return done(err);
+      }
+      done(null, newUser);
+    });
+  });
+}));
 passport.use(new LocalStrategy(
   // {
   //   usernameField: 'email',

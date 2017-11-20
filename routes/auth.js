@@ -7,6 +7,8 @@ const bcryptSalt = 10;
 
 const User = require('../models/user');
 
+/* LOCAL srategy */
+
 // --- GET signup form --- //
 router.get('/signup', (req, res, next) => {
   res.render('auth/signup');
@@ -15,6 +17,8 @@ router.get('/signup', (req, res, next) => {
 // --- GET login form --- //
 router.get('/login', (req, res, next) => {
   res.render('auth/login', { 'message': req.flash('error') });
+  // req.flash('error', 'hola');
+  // res.render('auth/login');
 });
 
 // --- GET logout --- //
@@ -65,6 +69,17 @@ router.post('/login', passport.authenticate('local', {
   failureRedirect: '/login',
   failureFlash: true,
   passReqToCallback: true
+}));
+
+/* GOOGLE Strategy */
+router.get('/auth/google', passport.authenticate('google', {
+  scope: ['https://www.googleapis.com/auth/plus.login',
+    'https://www.googleapis.com/auth/plus.profile.emails.read']
+}));
+
+router.get('/auth/google/callback', passport.authenticate('google', {
+  failureRedirect: '/',
+  successRedirect: '/'
 }));
 
 module.exports = router;
