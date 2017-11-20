@@ -21,9 +21,12 @@ const authRoutes = require('./routes/auth');
 const things = require('./routes/things');
 
 // Mongo configuration
-mongoose.connect('mongodb://localhost/neighborhood',
-  { useMongoClient: true }
-);
+mongoose.Promise = Promise;
+mongoose.connect(process.env.MONGODB_URI, {
+  keepAlive: true,
+  reconnectTries: Number.MAX_VALUE,
+  useMongoClient: true
+});
 
 const app = express();
 
