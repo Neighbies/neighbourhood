@@ -1,34 +1,13 @@
-<!DOCTYPE html>
-<html>
+<% if (!loggedIn) { %>
+  <a href="/signup">Sign up</a>
+  <a href="/login">Log in</a>
+  <% } else { %>
+    <a href="/logout">Log out</a>
+    <h2>Categories</h2>
 
-<head>
-  <title>
-    <%= title %>
-  </title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-
-<body>
-  <h1>
-    <%= title %>
-  </h1>
-  <p>Welcome to
-    <%= title %>
-  </p>
-
-  <% if (!loggedIn) { %>
-    <a href="/signup">Sign up</a>
-    <a href="/login">Log in</a>
-    <% } else { %>
-      <a href="/logout">Log out</a>
-      <h2>Categories</h2>
-
-      <% categories.forEach(category => { %>
-        <a href="/things/<%=category.id%>">
-          <%= category.title %>
-        </a>
-        <% }); %>
-          <% } %>
-</body>
-
-</html>
+    <% categories.forEach(category => { %>
+      <a href="/things/<%=category.id%>">
+        <%= category.title %>
+      </a>
+      <% }); %>
+        <% } %>
