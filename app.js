@@ -112,21 +112,23 @@ app.use('/', things);
 
 /* Errors */
 // Catch 404 and forward to error handler
+
+// NOTE: requires a views/not-found.ejs template
 app.use(function (req, res, next) {
-  const err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+  res.status(404);
+  res.render('not-found');
 });
 
-// Error handler
+// NOTE: requires a views/error.ejs template
 app.use(function (err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  // always log the error
+  console.error('ERROR', req.method, req.path, err);
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+  // only render if the error ocurred before sending the response
+  if (!res.headersSent) {
+    res.status(500);
+    res.render('error');
+  }
 });
 
 module.exports = app;
