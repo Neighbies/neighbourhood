@@ -1,4 +1,5 @@
 require('dotenv').config();
+const flash = require('connect-flash');
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
@@ -11,7 +12,6 @@ const MongoStore = require('connect-mongo')(session);
 const bcrypt = require('bcrypt');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const flash = require('connect-flash');
 
 const User = require('./models/user');
 
@@ -42,7 +42,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressLayouts);
-app.use(flash());
 
 // Session configuration
 app.use(session({
@@ -79,6 +78,7 @@ passport.deserializeUser((id, cb) => {
   });
 });
 
+app.use(flash());
 passport.use(new LocalStrategy(
   // {
   //   usernameField: 'email',

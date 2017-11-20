@@ -14,9 +14,7 @@ router.get('/signup', (req, res, next) => {
 
 // --- GET login form --- //
 router.get('/login', (req, res, next) => {
-  res.render('auth/login', {
-    'message': req.flash('error')
-  });
+  res.render('auth/login', { 'message': req.flash('error') });
 });
 
 // --- GET logout --- //
