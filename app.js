@@ -82,7 +82,7 @@ passport.deserializeUser((id, cb) => {
 app.use(flash());
 passport.use(new GoogleStrategy({
   clientID: '453699117097-fr84b90k2lu508c7uacf3pejc60igm4h.apps.googleusercontent.com',
-  clientSecret: 'kg9mD6oT6uXFUOYdqxMKFrut',
+  clientSecret: 'ab42_YiV_-ljK7SUQRifIVTg',
   callbackURL: '/auth/google/callback'
 }, (accessToken, refreshToken, profile, done) => {
   User.findOne({ googleID: profile.id }, (err, user) => {
