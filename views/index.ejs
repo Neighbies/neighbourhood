@@ -1,21 +1,18 @@
 <div class="background-index">
   <div class="container-index">
 
+
     <nav role="navigation">
       <div id="menuToggle">
-        <!--
-      A fake / hidden checkbox is used as click reciever,
-      so you can use the :checked selector on it.
-      -->
+
         <input type="checkbox" />
 
-        <!--Some spans to act as a hamburger. -->
         <span></span>
         <span></span>
         <span></span>
-
 
         <ul id="menu">
+
           <a href="/">
             <li>Welcome</li>
           </a>
@@ -29,27 +26,27 @@
             <li>Contact</li>
           </a>
 
-          <ul id="login-signup">
-            <% if (!loggedIn) { %>
-              <a class="signup" href="/signup">Sign up</a>
-              </br>
-              <a class="login" href="/login">Log in</a>
-              <% } else { %>
-                <a class="logout" href="/logout">Log out</a>
-                <h2>Categories</h2>
 
-                <% categories.forEach(category => { %>
-                  <a href="/things/<%=category.id%>">
-                    <%= category.title %>
-                  </a>
-                  <% }); %>
-                    <% } %>
-          </ul>
+          <% if (!loggedIn) { %>
+            <a id="last-item" class="signup" href="/signup">Sign up</a>
+
+            <a id="last-item" class="login" href="/login">Log in</a>
+
+            <% } else { %>
+              <a id="last-item" class="logout" href="/logout">Log out</a>
+              <h2>Categories</h2>
+
+              <% categories.forEach(category => { %>
+                <a href="/things/<%=category.id%>">
+                  <%= category.title %>
+                </a>
+                <% }); %>
+                  <% } %>
+
         </ul>
-
-
       </div>
     </nav>
+
 
     <div class="index-searcher">
       <img class="logo-menu" src="/pictures/logo-nou-blanc.png">
@@ -57,7 +54,7 @@
 
       <nav class="navbar navbar-light">
         <form class="form-inline">
-          <input class="form-control mr-sm-2 middle-searcher" type="search" placeholder="What are you looking for?" aria-label="Search">
+          <input class="form-control mr-sm-2 middle-searcher searcher" type="search" placeholder="What are you looking for?" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0 middle-button" type="submit">Search</button>
         </form>
       </nav>

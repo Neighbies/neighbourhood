@@ -1,22 +1,26 @@
-<form action="/signup" method="POST">
-    <label for="username">Username</label>
-    <input type="text" name="username" />
+<div class="signup-container">
 
-    <label for="email">Email</label>
-    <input type="text" name="email" />
+    <div class="signup-box">
+        <form action="/signup" method="POST">
 
-    <label for="password">Password</label>
-    <input type="password" name="password" />
+            <input type="text" placeholder="username" name="username" />
 
-    <% if (typeof message != "undefined") { %>
-        <div class="error-message">
-            <%= message %>
-        </div>
-        <% } %>
+            <input type="text" placeholder="Email" name="email" />
 
-            <button type="submit">Sign up</button>
-</form>
+            <input type="password" placeholder="Password" name="password" />
 
-<div>
-    <a href="/auth/google">Sign up with Google</a>
+            <% if (typeof message != "undefined") { %>
+                <div class="error-message">
+                    <%= message %>
+                </div>
+                <% } %>
+
+                    <button type="submit" id="signup-button">Sign up</button>
+        </form>
+
+
+        <a href="/auth/google">
+            <button class="signup-using-google">Sign up using Google</button>
+        </a>
+    </div>
 </div>
