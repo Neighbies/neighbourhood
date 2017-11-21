@@ -1,5 +1,6 @@
 <div class="background-index">
   <div class="container-index">
+    <div class="comunity-of-makers"></div>
 
 
     <nav role="navigation">
@@ -13,28 +14,18 @@
 
         <ul id="menu">
 
-          <a href="/">
-            <li>Welcome</li>
-          </a>
-          <a href="/">
-            <li>About Us</li>
-          </a>
-          <a href="/">
-            <li>Social</li>
-          </a>
-          <a href="/">
-            <li>Contact</li>
-          </a>
-
           <% if (!loggedIn) { %>
-            <a id="last-item" class="signup" href="/signup">Sign up</a>
-
-            <a id="last-item" class="login" href="/login">Log in</a>
-
-            <% } else { %>
-              <a id="last-item" class="logout" href="/logout">Log out</a>
-
-              <% } %>
+            <div class="signup-div">
+              <a class="signup" href="/signup">Sign up</a>
+            </div>
+            <div class="login-div">
+              <a class="login" href="/login">Log in</a>
+            </div>
+            <div class="logout-div">
+              <% } else { %>
+                <a class="logout" href="/logout">Log out</a>
+                <% } %>
+            </div>
 
         </ul>
       </div>
@@ -62,5 +53,22 @@
       <%= category.title %>
     </a>
     <% }); %>
+
+      <footer>
+
+        <div class="social">
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </div>
+
+        <p class="made-with-love">
+          <i class="fa fa-copyright" aria-hidden="true"></i>Made with
+          <i class="fa fa-heart" aria-hidden="true"></i>
+          by Clara Ameller & Cristina Moreno </p>
+
+
+      </footer>
+
 
 </div>
