@@ -29,4 +29,4 @@ desktop.ini
 # dotenv
 .env
 .DS_Store
-/bin/seeds.js
+bin/seeds.js
