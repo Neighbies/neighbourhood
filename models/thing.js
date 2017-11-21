@@ -10,7 +10,8 @@ const thingSchema = new Schema({
   pic_path: String,
   pic_name: String,
   price: Number,
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  description: String
 }, {
   timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
 });
