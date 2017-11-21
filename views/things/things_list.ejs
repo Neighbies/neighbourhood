@@ -1,6 +1,15 @@
 <% data.forEach(thing => { %>
-    <a href="/things/<%=thing.id%>/show">
-        <%= thing.title %>
-    </a>
+    <div>
+        <a href="/things/<%=thing.id%>/show">
+            <img src="<%= thing.pic_path %>/<%= thing.pic_name %>" alt="">
+        </a>
+        <p>
+            <%= thing.title %>
+                <strong>
+                    <%= thing.price %>$
+                </strong>
+        </p>
+
+    </div>
     <br />
     <% }); %>
