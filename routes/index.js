@@ -5,16 +5,16 @@ const Category = require('../models/category');
 
 // --- GET home page --- //
 router.get('/', (req, res, next) => {
-  if (req.isAuthenticated()) {
-    Category.find({}, (err, category) => {
-      if (err) {
-        return next(err);
-      }
+  Category.find({}, (err, category) => {
+    if (err) {
+      return next(err);
+    }
+    if (req.isAuthenticated()) {
       res.render('index', { title: 'Express', loggedIn: true, categories: category });
-    });
-  } else {
-    res.render('index', { title: 'Express', loggedIn: false });
-  }
+    } else {
+      res.render('index', { title: 'Express', loggedIn: false, categories: category });
+    }
+  });
 });
 
 module.exports = router;

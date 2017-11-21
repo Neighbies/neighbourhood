@@ -26,7 +26,6 @@
             <li>Contact</li>
           </a>
 
-
           <% if (!loggedIn) { %>
             <a id="last-item" class="signup" href="/signup">Sign up</a>
 
@@ -34,14 +33,8 @@
 
             <% } else { %>
               <a id="last-item" class="logout" href="/logout">Log out</a>
-              <h2>Categories</h2>
 
-              <% categories.forEach(category => { %>
-                <a href="/things/<%=category.id%>">
-                  <%= category.title %>
-                </a>
-                <% }); %>
-                  <% } %>
+              <% } %>
 
         </ul>
       </div>
@@ -63,4 +56,11 @@
 
 
   </div>
+  <h2>Categories</h2>
+  <% categories.forEach((category) => { %>
+    <a href="/things/<%= category._id %>">
+      <%= category.title %>
+    </a>
+    <% }); %>
+
 </div>
