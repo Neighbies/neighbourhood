@@ -22,7 +22,7 @@ router.get('/login', (req, res, next) => {
 // --- GET logout --- //
 router.get('/logout', ensureLogin.ensureLoggedIn(), (req, res) => {
   req.logout();
-  res.redirect('/login');
+  res.redirect('/');
 });
 
 // --- POST signup form --- //
