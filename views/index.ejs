@@ -28,19 +28,23 @@
           <a href="/">
             <li>Contact</li>
           </a>
-          <% if (!loggedIn) { %>
-            <a class="signup" href="/signup">Sign up</a>
-            <a class="login" href="/login">Log in</a>
-            <% } else { %>
-              <a class="logout" href="/logout">Log out</a>
-              <h2>Categories</h2>
 
-              <% categories.forEach(category => { %>
-                <a href="/things/<%=category.id%>">
-                  <%= category.title %>
-                </a>
-                <% }); %>
-                  <% } %>
+          <ul id="login-signup">
+            <% if (!loggedIn) { %>
+              <a class="signup" href="/signup">Sign up</a>
+              </br>
+              <a class="login" href="/login">Log in</a>
+              <% } else { %>
+                <a class="logout" href="/logout">Log out</a>
+                <h2>Categories</h2>
+
+                <% categories.forEach(category => { %>
+                  <a href="/things/<%=category.id%>">
+                    <%= category.title %>
+                  </a>
+                  <% }); %>
+                    <% } %>
+          </ul>
         </ul>
 
 
