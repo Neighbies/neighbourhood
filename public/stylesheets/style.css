@@ -212,12 +212,9 @@ margin: 0 auto !important;
 
 #menu > a
 {
-  font-family: 'Roboto';
   text-decoration: none;
   color: #455A64;
   transition: color 0.3s ease;
-  text-transform: uppercase;
-  font-weight: bold;
   font-size: 1em;
 }
 
