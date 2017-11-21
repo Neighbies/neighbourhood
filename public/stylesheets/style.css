@@ -534,6 +534,12 @@ footer{
   display: none;
 }
 
+/*---------THINGS---------*/
+#map {
+  height: 500px;
+  width: 100%;
+}
+
 /*---------QUERIES---------*/
 
 @media (orientation:landscape) {

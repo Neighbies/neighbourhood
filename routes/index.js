@@ -10,6 +10,7 @@ router.get('/', (req, res, next) => {
       return next(err);
     }
     if (req.isAuthenticated()) {
+      // const img = `${req.user.pic_path}/${req.user.pic_name}`;
       res.render('index', { title: 'Express', loggedIn: true, categories: category });
     } else {
       res.render('index', { title: 'Express', loggedIn: false, categories: category });

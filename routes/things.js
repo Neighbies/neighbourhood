@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const {ObjectId} = require('mongodb');
 
-const Category = require('../models/category');
+// const Category = require('../models/category');
 const Thing = require('../models/thing');
 const User = require('../models/user');
 
