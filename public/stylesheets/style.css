@@ -192,6 +192,8 @@ margin: 0 auto !important;
 
 .navbar {
   justify-content: center !important;
+  position: relative;
+  padding: .5rem 1rem;
 }
 
 
@@ -226,14 +228,14 @@ a:hover
 #menuToggle
 {
   display: block;
-  position: relative;
-  top: 55%;
-  left: 5%;
-  
   z-index: 1;
-  
+  top: 5%;
+  left: 8%;
+  z-index: 1;
   -webkit-user-select: none;
-  user-select: none;
+  -webkit-user-select: none;
+  position: absolute;
+  width: 110%;
 }
 
 #menuToggle input
@@ -327,6 +329,7 @@ a:hover
   padding-top: 125px;
   
   background: #FFFFFFA6;
+  background-size: 100vh;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
@@ -335,6 +338,15 @@ a:hover
   transform: translate(-100%, 0);
   
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+#login-signup{
+  position: relative;
+  top: 90%;
+}
+
+ul #login-signup {
+  padding: 0;
+  padding-top: 166%;
 }
 
 #menu li
@@ -354,7 +366,20 @@ a:hover
 
 /*---------QUERIES---------*/
 
+@media (orientation:landscape) {
+
 .logo-menu{}
 
 
 .logo-index-neighbourhood{}
+
+
+#menuToggle {
+  display: block;
+  z-index: 1;
+  top: 17%;
+  left: 3%;
+
+}
+}
+@media ( min-width: 1000px) {}

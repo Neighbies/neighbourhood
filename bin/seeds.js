@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/neighborhood', {
+mongoose.connect('mongodb://heroku_n3cl356c:l05e8dshg43vvhp3hqtbppdsi9@ds113936.mlab.com:13936/heroku_n3cl356c', {
   useMongoClient: true
 });
 const bcrypt = require('bcrypt');
@@ -138,16 +138,16 @@ const categories = [
 //   });
 // });
 
-// Category.create(categories, (err, docs) => {
-//   if (err) {
-//     throw err;
-//   }
+Category.create(categories, (err, docs) => {
+  if (err) {
+    throw err;
+  }
 
-//   docs.forEach((categories) => {
-//     console.log(categories.title);
-//   });
-//   mongoose.connection.close();
-// });
+  docs.forEach((categories) => {
+    console.log(categories.title);
+  });
+  mongoose.connection.close();
+});
 
 // Thing.create(things, (err, docs) => {
 //   if (err) {
