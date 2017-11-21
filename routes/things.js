@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const {ObjectId} = require('mongodb');
 
 const Category = require('../models/category');
 const Thing = require('../models/thing');
@@ -23,7 +24,13 @@ router.get('/things/:id/show', (req, res, next) => {
     if (err) {
       return next(err);
     }
-    res.render('things/things_one', { thing });
+    User.findById(thing.user, (err, user) => {
+      if (err) {
+        return next(err);
+      }
+      console.log(req.isAuthenticated());
+      res.render('things/things_one', { loggedIn: req.isAuthenticated(), thing, user });
+    });
   });
 });
 
