@@ -27,59 +27,116 @@ const User = require('../models/user');
 //   }
 // ];
 
-// const users = [
-//   {
-//     username: 'user1',
-//     email: '',
-//     telephone: '',
-//     password: bcrypt.hashSync('', salt),
-//     prof_pic_path: '',
-//     prof_pic_name: '',
-//     things: [things._id]
-//   }
-// ];
-
-const category = new Category({
-  _id: new mongoose.Types.ObjectId(),
-  title: 'category2',
-  pic_path: '',
-  pic_name: ''
-});
-
-category.save((err) => {
-  if (err) {
-    return err;
+const users = [
+  {
+    username: 'user1',
+    email: '',
+    telephone: '',
+    password: bcrypt.hashSync('', salt),
+    prof_pic_path: '',
+    prof_pic_name: ''
+    // things: [things._id]
+  },
+  {
+    username: 'user2',
+    email: '',
+    telephone: '',
+    password: bcrypt.hashSync('', salt),
+    prof_pic_path: '',
+    prof_pic_name: ''
+    // things: [things._id]
+  },
+  {
+    username: 'user3',
+    email: '',
+    telephone: '',
+    password: bcrypt.hashSync('', salt),
+    prof_pic_path: '',
+    prof_pic_name: ''
+    // things: [things._id]
+  },
+  {
+    username: 'user4',
+    email: '',
+    telephone: '',
+    password: bcrypt.hashSync('', salt),
+    prof_pic_path: '',
+    prof_pic_name: ''
+    // things: [things._id]
+  },
+  {
+    username: 'user5',
+    email: '',
+    telephone: '',
+    password: bcrypt.hashSync('', salt),
+    prof_pic_path: '',
+    prof_pic_name: ''
+    // things: [things._id]
   }
+];
 
-  const thing = new Thing({
-    title: 'thing2',
-    localitzation: [],
-    categories: [category._id],
-    price: 8
-  });
+const categories = [
+  {
+    title: 'Music'
+  },
+  {
+    title: 'Home'
+  },
+  {
+    title: 'Animals'
+  },
+  {
+    title: 'Deliveries'
+  },
+  {
+    title: 'Transportation'
+  },
+  {
+    title: 'Teaching'
+  }
+];
 
-  thing.save((err) => {
-    if (err) {
-      return err;
-    }
+// const category = new Category({
+//   _id: new mongoose.Types.ObjectId(),
+//   title: 'category2',
+//   pic_path: '',
+//   pic_name: ''
+// });
 
-    const user = new User({
-      username: 'user2',
-      email: '',
-      telephone: '',
-      password: bcrypt.hashSync('', salt),
-      prof_pic_path: '',
-      prof_pic_name: '',
-      things: [thing._id]
-    });
+// category.save((err) => {
+//   if (err) {
+//     return err;
+//   }
 
-    user.save((err) => {
-      if (err) {
-        return err;
-      }
-    });
-  });
-});
+//   const thing = new Thing({
+//     title: 'thing2',
+//     localitzation: [],
+//     categories: [category._id],
+//     price: 8
+//   });
+
+//   thing.save((err) => {
+//     if (err) {
+//       return err;
+//     }
+
+//     const user = new User({
+//       username: 'user2',
+//       email: '',
+//       telephone: '',
+//       password: bcrypt.hashSync('', salt),
+//       prof_pic_path: '',
+//       prof_pic_name: '',
+//       things: [thing._id]
+//     });
+
+//     user.save((err) => {
+//       if (err) {
+//         return err;
+//       }
+//     });
+//   });
+// });
 
 // Category.create(categories, (err, docs) => {
 //   if (err) {
@@ -103,13 +160,13 @@ category.save((err) => {
 //   mongoose.connection.close();
 // });
 
-// User.create(users, (err, docs) => {
-//   if (err) {
-//     throw err;
-//   }
+User.create(users, (err, docs) => {
+  if (err) {
+    throw err;
+  }
 
-//   docs.forEach((users) => {
-//     console.log(users.username);
-//   });
-//   mongoose.connection.close();
-// });
+  docs.forEach((users) => {
+    console.log(users.username);
+  });
+  mongoose.connection.close();
+});

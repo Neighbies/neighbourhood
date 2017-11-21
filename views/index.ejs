@@ -33,14 +33,7 @@
             <a class="login" href="/login">Log in</a>
             <% } else { %>
               <a class="logout" href="/logout">Log out</a>
-              <h2>Categories</h2>
-
-              <% categories.forEach(category => { %>
-                <a href="/things/<%=category.id%>">
-                  <%= category.title %>
-                </a>
-                <% }); %>
-                  <% } %>
+              <% } %>
         </ul>
 
 
@@ -62,4 +55,11 @@
 
 
   </div>
+  <h2>Categories</h2>
+  <% categories.forEach((category) => { %>
+    <a href="/things/<%= category._id %>">
+      <%= category.title %>
+    </a>
+    <% }); %>
+
 </div>
