@@ -40,19 +40,22 @@ function startMap () {
   geocodeAddress(geocoder, map);
 
   function geocodeAddress (geocoder, resultsMap) {
-    var address = 'Barcelona';
-    geocoder.geocode({'address': address}, function (results, status) {
-      if (status === 'OK') {
-        resultsMap.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-          map: resultsMap,
-          position: results[0].geometry.location
-        });
-      } else {
-        alert('Geocode was not successful for the following reason: ', status);
-      }
+    things.forEach(thing => {
+      console.log(thing.localitzation);
+      var address = thing.localitzation;
+      geocoder.geocode({'address': address}, function (results, status) {
+        if (status === 'OK') {
+          resultsMap.setCenter(results[0].geometry.location);
+          var marker = new google.maps.Marker({
+            map: resultsMap,
+            position: results[0].geometry.location
+          });
+        } else {
+          alert('Geocode was not successful for the following reason: ', status);
+        }
+      });
     });
   }
 }
-
+console.log(things);
 startMap();

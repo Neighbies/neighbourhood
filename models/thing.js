@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const thingSchema = new Schema({
   title: String,
-  localitzation: { type: { type: String }, coordinates: [Number] },
+  localitzation: String,
   categories: [
     { type: mongoose.Schema.Types.ObjectId, ref: 'Category' }
   ],
