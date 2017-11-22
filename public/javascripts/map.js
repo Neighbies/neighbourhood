@@ -1,10 +1,10 @@
 function startMap () {
-  const ironhackBCN = { lat: 41.3977381, lng: 2.190471916 };
+  // const barcelona = { lat: 41.3818, lng: 2.1685 };
 
   // Map initialization
   const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 14,
-    center: ironhackBCN
+    zoom: 14
+    // center: 'Barcelona'
   });
 
   // Get user's location
@@ -48,6 +48,7 @@ function startMap () {
           resultsMap.setCenter(results[0].geometry.location);
           var marker = new google.maps.Marker({
             map: resultsMap,
+            label: String(thing.price + '$'),
             position: results[0].geometry.location
           });
         } else {
