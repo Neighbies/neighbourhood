@@ -1,7 +1,7 @@
 <div class="signup-container">
     <div class="signup-box">
         <form action="/signup" method="POST" class="signup-form">
-            <a href="/">
+            <a class="go-home-logo" href="/">
                 <img class="logo-menu signin-login" src="/pictures/logo-nou.png">
             </a>
             <div class="form-group-button-google">
@@ -23,11 +23,13 @@
             <div class="form-group">
 
                 <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                <small id="emailHelp" class="form-text text-muted">If you already have an account,
+
+            </div>
+            <div class="already-account">
+                <small id="emailHelp" class="form-text text-muted">If you already created an account,
                     <a class="go-to-login" href="/login"> log in</a>.
                 </small>
             </div>
-
             <button type="submit" class="btn btn-primary btn-color">Sign up</button>
         </form>
 
