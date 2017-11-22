@@ -30,7 +30,10 @@ router.get('/things', (req, res, next) => {
     if (err) {
       return next(err);
     }
-
+    // const locations = [];
+    // thing.forEach(doc => {
+    //   locations.push(doc.localitzation);
+    // });
     res.render('things/things_list', { data: thing });
   });
 });

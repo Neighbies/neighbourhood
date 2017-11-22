@@ -1,10 +1,10 @@
 function startMap () {
-  const ironhackBCN = { lat: 41.3977381, lng: 2.190471916 };
+  // const barcelona = { lat: 41.3818, lng: 2.1685 };
 
   // Map initialization
   const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 14,
-    center: ironhackBCN
+    zoom: 14
+    // center: 'Barcelona'
   });
 
   // Get user's location
@@ -40,19 +40,23 @@ function startMap () {
   geocodeAddress(geocoder, map);
 
   function geocodeAddress (geocoder, resultsMap) {
-    var address = 'Barcelona';
-    geocoder.geocode({'address': address}, function (results, status) {
-      if (status === 'OK') {
-        resultsMap.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-          map: resultsMap,
-          position: results[0].geometry.location
-        });
-      } else {
-        alert('Geocode was not successful for the following reason: ', status);
-      }
+    things.forEach(thing => {
+      console.log(thing.localitzation);
+      var address = thing.localitzation;
+      geocoder.geocode({'address': address}, function (results, status) {
+        if (status === 'OK') {
+          resultsMap.setCenter(results[0].geometry.location);
+          var marker = new google.maps.Marker({
+            map: resultsMap,
+            label: String(thing.price + '$'),
+            position: results[0].geometry.location
+          });
+        } else {
+          alert('Geocode was not successful for the following reason: ', status);
+        }
+      });
     });
   }
 }
-
+console.log(things);
 startMap();
