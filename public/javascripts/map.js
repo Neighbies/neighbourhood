@@ -51,6 +51,9 @@ function startMap () {
             label: String(thing.price + '$'),
             position: results[0].geometry.location
           });
+          marker.addListener('click', function () {
+            window.location.href = `/things/${thing._id}`;
+          });
         } else {
           alert('Geocode was not successful for the following reason: ', status);
         }
