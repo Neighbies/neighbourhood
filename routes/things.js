@@ -30,6 +30,8 @@ router.get('/things', (req, res, next) => {
     if (err) {
       return next(err);
     }
+    let price = thing.price;
+    let location = thing.locatitzation;
 
     res.render('things/things_list', { data: thing });
   });
@@ -42,6 +44,7 @@ router.get('/things/:id', (req, res, next) => {
     if (err) {
       return next(err);
     }
+    console.log(thing.user);
     User.findById(thing.user, (err, user) => {
       if (err) {
         return next(err);
