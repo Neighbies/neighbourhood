@@ -16,6 +16,8 @@ const thingSchema = new Schema({
   timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
 });
 
+thingSchema.index({title: 'text', description: 'text'});
+
 const Thing = mongoose.model('Thing', thingSchema);
 
 module.exports = Thing;

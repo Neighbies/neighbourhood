@@ -18,6 +18,7 @@ function startMap () {
     title: 'Barcelona Campus'
   });
 
+  // Get user's location
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function (position) {
       const user_location = {
@@ -43,6 +44,35 @@ function startMap () {
   } else {
     console.log('Browser does not support geolocation.');
   }
+
+  // Get things location
+  // const geocoder = new google.maps.Geocoder();
+
+  // Thing.find({}, {location: 1}, (err, thing, next) => {
+  //   if (err) {
+  //     throw next(err);
+  //   } else {
+  //     console.log(thing);
+  //   }
+  // });
+  // function geocodeAddress(geocoder, resultsMap) {
+  //   var address = document.getElementById('address').value;
+  //   geocoder.geocode({'address': address}, function(results, status) {
+  //     if (status === 'OK') {
+  //       resultsMap.setCenter(results[0].geometry.location);
+  //       var marker = new google.maps.Marker({
+  //         map: resultsMap,
+  //         position: results[0].geometry.location
+  //       });
+  //       document.getElementById('latitude').value = results[0].geometry.location.lat();
+  //       document.getElementById('longitude').value = results[0].geometry.location.lng();
+  //     } else {
+  //       alert('Geocode was not successful for the following reason: ' status);
+  //     }
+  //   });
+  // }
 }
 
 startMap();
+
+// module.exports = router;
