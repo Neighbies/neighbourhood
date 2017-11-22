@@ -16,6 +16,9 @@
                 </form>
             </nav>
         </div>
+
+
+
         <% data.forEach(thing => { %>
             <div class="thing-itself">
                 <a href="/things/<%=thing.id%>">
@@ -36,12 +39,16 @@
     </div>
 
     <!-- GOOGLE MAPS -->
-    <div id="map">
-    </div>
+
+<div id="map"></div>
+
 </div>
 
+
+
+
 <script>
-    var things = <% - JSON.stringify(data) %>;
+    var things = <%- JSON.stringify(data) %>;
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9Qq5nj0KdadNbtAvK96Balq-VGp0zYBA"></script>
