@@ -30,8 +30,6 @@ router.get('/things', (req, res, next) => {
     if (err) {
       return next(err);
     }
-    let price = thing.price;
-    let location = thing.locatitzation;
 
     res.render('things/things_list', { data: thing });
   });
