@@ -383,9 +383,14 @@ margin: 0 auto !important;
 
 .signup-using-google:hover{
   background-color: #DD2C00;
+  text-decoration: none;
 }
 .signup-using-google > a{
   color: white;
+}
+.signup-using-google > a:hover{
+  color: white;
+  text-decoration: none;
 }
 
 .signup-container, .login-container {
@@ -493,6 +498,29 @@ flex-direction: column;
   color: #EF6C00;  
 }
 
+/* .logout-button{
+  height: 40px;
+  width: 170px;
+  border-radius: 4px;
+  border-style: none;
+} */
+
+.error-message{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #D50000;
+  font-size: 0.9em;
+}
+.already-account{
+  position: relative;
+  bottom: 10px;
+}
+
+.go-home-logo{
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
 /*---------FOOTER---------*/
 
 footer{
@@ -560,11 +588,6 @@ footer{
 
 .searcher{
 width: 400px !important;
-}
-
-.signin-login{
-  width: 100px;
-  height: auto;
 }
 
 .btn-color{

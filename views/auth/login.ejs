@@ -1,7 +1,7 @@
 <div class="login-container">
     <div class="login-box">
-        <a href="/">
-            <img class="logo-menu signin-login" src="/pictures/logo-nou.png">
+        <a class="go-home-logo" href="/">
+            <img class="logo-menu" src="/pictures/logo-nou.png">
         </a>
         <form class="login-form" action="/login" method="POST">
 
@@ -17,25 +17,39 @@
             </div>
             <div class="form-group">
                 <input type="password" name="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter password">
-                <small id="emailHelp" class="form-text text-muted">If you don't have an account yet,
+
+            </div>
+            <div class="already-account">
+                <small id="emailHelp" class="form-text text-muted">No account?,
                     <a class="go-to-login" href="/signup">sign up</a>.
                 </small>
             </div>
             <button type="submit" class="btn btn-primary btn-color login-btn">Log in</button>
         </form>
 
+
+
+        <% if (typeof message != "undefined") { %>
+            <div class="error-message">
+                <%= message %>
+            </div>
+            <% } %>
     </div>
 
-    <% if (typeof message != "undefined") { %>
-        <div class="error-message">
-            <%= message %>
-        </div>
-        <% } %>
-
-
+<<<<<<< HEAD
             <div class="form-group-go-back-button">
                 <a href="/">
                     <i class="fa fa-long-arrow-left fa-3x" aria-hidden="true"></i>
                 </a>
             </div>
+=======
+    <div class="form-group-go-back-button">
+        <a href="/">
+
+            <i class="fa fa-long-arrow-left fa-3x" aria-hidden="true"></i>
+
+
+        </a>
+    </div>
+>>>>>>> master
 </div>
