@@ -1,5 +1,8 @@
 <div class="background-index">
   <div class="container-index">
+
+
+    <!-- TOP BAR -->
     <div class="comunity-of-makers">
       <p class="join-the-comunity">
         Join the biggest comunity of makers in the world
@@ -8,7 +11,7 @@
       </p>
     </div>
 
-
+    <!-- BURGER MENU -->
     <nav role="navigation">
       <div id="menuToggle">
 
@@ -39,6 +42,7 @@
     </nav>
 
 
+    <!-- SEARCHER -->
     <div class="index-searcher">
       <img class="logo-menu" src="/pictures/logo-nou-blanc.png">
       <img class="logo-index-neighbourhood" src="/pictures/neighbourhood.png">
@@ -52,31 +56,31 @@
       </nav>
     </div>
 
-
+    <div class="categories">
+      <h2>Categories</h2>
+      <% categories.forEach((category) => { %>
+        <a href="/things?cat=<%= category._id %>">
+          <img src="<%= category.img_path %>/<%= category.img_name %>" alt="">
+        </a>
+        <% }); %>
+    </div>
 
   </div>
-  <h2>Categories</h2>
-  <% categories.forEach((category) => { %>
-    <a href="/things?cat=<%= category._id %>">
-      <%= category.title %>
-    </a>
-    <% }); %>
+  <footer>
 
-      <footer>
+    <div class="social">
+      <i class="fa fa-instagram" aria-hidden="true"></i>
+      <i class="fa fa-twitter" aria-hidden="true"></i>
+      <i class="fa fa-facebook" aria-hidden="true"></i>
+    </div>
 
-        <div class="social">
-          <i class="fa fa-instagram" aria-hidden="true"></i>
-          <i class="fa fa-twitter" aria-hidden="true"></i>
-          <i class="fa fa-facebook" aria-hidden="true"></i>
-        </div>
-
-        <p class="made-with-love">
-          <i class="fa fa-copyright" aria-hidden="true"></i>Made with
-          <i class="fa fa-heart" aria-hidden="true"></i>
-          by Clara Ameller & Cristina Moreno </p>
+    <p class="made-with-love">
+      <i class="fa fa-copyright" aria-hidden="true"></i>Made with
+      <i class="fa fa-heart" aria-hidden="true"></i>
+      by Clara Ameller & Cristina Moreno </p>
 
 
-      </footer>
+  </footer>
 
 
 </div>
