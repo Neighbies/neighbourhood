@@ -44,8 +44,9 @@
       <img class="logo-index-neighbourhood" src="/pictures/neighbourhood.png">
 
       <nav class="navbar navbar-light">
-        <form class="form-inline">
-          <input class="form-control mr-sm-2 middle-searcher searcher" type="search" placeholder="What are you looking for?" aria-label="Search">
+        <form class="form-inline" action="/things" method="GET">
+          <input class="form-control mr-sm-2 middle-searcher searcher" name="terms" type="search" placeholder="What are you looking for?"
+            aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0 middle-button" type="submit">Search</button>
         </form>
       </nav>
@@ -56,7 +57,7 @@
   </div>
   <h2>Categories</h2>
   <% categories.forEach((category) => { %>
-    <a href="/things/<%= category._id %>">
+    <a href="/things?cat=<%= category._id %>">
       <%= category.title %>
     </a>
     <% }); %>

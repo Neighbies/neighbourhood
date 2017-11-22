@@ -6,18 +6,37 @@ const Thing = require('../models/thing');
 const User = require('../models/user');
 
 // --- GET things by category --- //
-router.get('/things/:catId', (req, res, next) => {
-  const catId = req.params.catId;
-  Thing.find({ categories: catId }, (err, thing) => {
+router.get('/things', (req, res, next) => {
+  const catId = req.query.cat;
+  const terms = req.query.terms;
+  let findQuery = {};
+
+  if (catId !== undefined && terms !== undefined) {
+    findQuery = {
+      categories: catId,
+      $text: {$search: terms}
+    };
+  } else if (catId !== undefined) {
+    findQuery = {
+      categories: catId
+    };
+  } else if (terms !== undefined) {
+    findQuery = {
+      $text: {$search: terms}
+    };
+  }
+
+  Thing.find(findQuery, (err, thing) => {
     if (err) {
       return next(err);
     }
+
     res.render('things/things_list', { data: thing });
   });
 });
 
 // --- GET individual thing --- //
-router.get('/things/:id/show', (req, res, next) => {
+router.get('/things/:id', (req, res, next) => {
   const thingId = req.params.id;
   Thing.findById(thingId, (err, thing) => {
     if (err) {
