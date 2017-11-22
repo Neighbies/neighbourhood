@@ -112,7 +112,27 @@ background-color: #FFA726;
 .come-back-button-a:hover{
   text-decoration: none;
   
-  }
+}
+
+
+
+.go-home-button{
+  cursor: pointer;
+  color: white;
+  background-color: #0D47A1;
+  padding: 4px 5px;
+  border-radius: 4px;
+  position: absolute;
+  top: 3%;
+  left: 5%;
+  position: absolute;
+}
+
+.go-home-button:hover{
+  text-decoration: none;
+  background-color: #1565C0;
+  color: white;
+}
 
 .come-back-button-a{
   font-family: 'Roboto';
@@ -451,9 +471,7 @@ display: flex;
 flex-direction: column;
 }
 
-.fa-long-arrow-left{
-  color: #455A64;
-}
+
 
 .go-to-login{
   color: #EF6C00;
