@@ -21,6 +21,7 @@ const index = require('./routes/index');
 const users = require('./routes/users');
 const authRoutes = require('./routes/auth');
 const things = require('./routes/things');
+const profile = require('./routes/profile');
 
 // Mongo configuration
 mongoose.Promise = Promise;
@@ -135,6 +136,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/', authRoutes);
 app.use('/', things);
+app.use('/', profile);
 
 /* Errors */
 // Catch 404 and forward to error handler
