@@ -56,16 +56,23 @@
       </nav>
     </div>
 
+    <!-- CATEGORIES -->
     <div class="categories">
-      <h2>Categories</h2>
-      <% categories.forEach((category) => { %>
-        <a href="/things?cat=<%= category._id %>">
-          <img src="<%= category.img_path %>/<%= category.img_name %>" alt="">
-        </a>
-        <% }); %>
+      <h2 class="cat-title">Categories</h2>
+      <div class="cats">
+        <% categories.forEach((category) => { %>
+          <a class="cat-atri" href="/things?cat=<%= category._id %>">
+            <img class="cat" src="<%= category.img_path %>/<%= category.img_name %>" alt="">
+          </a>
+          <% }); %>
+
+      </div>
     </div>
 
   </div>
+
+
+  <!-- FOOTER -->
   <footer>
 
     <div class="social">

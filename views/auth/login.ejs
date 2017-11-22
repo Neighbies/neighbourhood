@@ -1,40 +1,51 @@
+<!-- LOGIN -->
 <div class="login-container">
     <div class="login-box">
+        <!-- LOGO -->
         <a class="go-home-logo" href="/">
             <img class="logo-menu" src="/pictures/logo-nou.png">
         </a>
-        <form class="login-form" action="/login" method="POST">
 
+
+        <!-- FORM -->
+        <form class="login-form" action="/login" method="POST">
+            <!-- GOOGLE BUTTON -->
             <div class="form-group-button-google">
                 <button class="signup-using-google">
                     <a href="/auth/google">Log in with Google</a>
                 </button>
             </div>
-
+            <!-- USERNAME -->
             <div class="form-group">
                 <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
 
             </div>
+            <!-- PASSWORD -->
             <div class="form-group">
                 <input type="password" name="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter password">
 
             </div>
+            <!-- NO ACCOUNT YET? GO TO LOGIN  -->
             <div class="already-account">
                 <small id="emailHelp" class="form-text text-muted">No account?,
                     <a class="go-to-login" href="/signup">sign up</a>.
                 </small>
             </div>
+
+            <!-- SUBMIT BUTTON -->
             <button type="submit" class="btn btn-primary btn-color login-btn">Log in</button>
         </form>
 
 
-
+        <!-- FLASH MESSAGE -->
         <% if (typeof message != "undefined") { %>
             <div class="error-message">
                 <%= message %>
             </div>
             <% } %>
 
+
+                <!-- BACK HOME -->
                 <div>
                     <a class="go-home-button" href="/">
                         <i class="fa fa-long-arrow-left" aria-hidden="true"></i>

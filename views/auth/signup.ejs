@@ -1,43 +1,61 @@
+<!--SIGNUP-->
 <div class="signup-container">
     <div class="signup-box">
+
+        <!--FORM-->
         <form action="/signup" method="POST" class="signup-form">
+
+            <!--LOGO-->
             <a class="go-home-logo" href="/">
                 <img class="logo-menu" src="/pictures/logo-nou.png">
             </a>
+
+            <!-- GOOGLE BUTTON -->
             <div class="form-group-button-google">
 
                 <button class="signup-using-google">
                     <a href="/auth/google">Sign up using Google</a>
                 </button>
-
-
             </div>
+
+            <!-- USERNAME -->
             <div class="form-group">
                 <input name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
 
             </div>
+
+            <!-- EMAIL -->
             <div class="form-group">
                 <input name="email" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
 
             </div>
+
+            <!-- PASSWORD -->
             <div class="form-group">
-
                 <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-
             </div>
+
+            <!-- ALREADY HAVE AN ACCOUNT? -->
             <div class="already-account">
                 <small id="emailHelp" class="form-text text-muted">If you already created an account,
                     <a class="go-to-login" href="/login"> log in</a>.
                 </small>
             </div>
+
+            <!-- SUBMIT -->
             <button type="submit" class="btn btn-primary btn-color">Sign up</button>
         </form>
+
+        <!-- GO HOME -->
         <div>
             <a class="go-home-button" href="/">
                 <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
                 Go Home</a>
         </div>
     </div>
+
+
+    <!-- FLASH MESSAGE -->
     <% if (typeof message != "undefined") { %>
         <div class="error-message">
             <%= message %>

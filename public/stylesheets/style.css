@@ -1,3 +1,9 @@
+
+/*---------DEFAULT BEHAVOUR---------*/
+
+/* @media ( min-width: 1000px) {} */
+
+
 html {
   overflow-x: hidden;
   margin: 0;
@@ -29,7 +35,7 @@ body{
 
 
 
-/*---------ERROR PAGES---------*/
+/*---------ERROR PAGES (404 & 500)---------*/
 .error-background {
   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
   height: 100%;
@@ -128,7 +134,49 @@ background-color: #FFA726;
 }
 
 
-/*---------INDEX---------*/
+
+
+
+
+
+
+/*---------LANGING PAGE---------*/
+
+/*-------------------TOP BAR-------------------*/
+.join-the-comunity{
+  display: none;
+}
+
+.comunity-of-makers{
+  width: 100%;
+  height: 50px;
+  background-color:#ECEFF1 ;
+  z-index: 93;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+	align-items: center;
+  align-content: center;
+  border-bottom: 0.5px solid #B0BEC5
+  
+}
+
+.join-the-comunity{
+  display: inline;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #37474F;
+}
+
+
+
+
+
+
+
+/*---------HEADER---------*/
+
 
 .logo-menu{
   width: 19%;
@@ -161,20 +209,26 @@ background-color: #FFA726;
 }
 
 .background-index{
-  height: 100%;
   width: 100%;
   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
 }
 
 .container-index{
-  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   
 }
 
-/*---------BOOTSTRAP INPUT--------*/
+
+
+
+
+
+
+
+
+/*-----------------------------BOOTSTRAP SEARCHER*/
 
 .middle-button {
 margin: 0 auto !important;
@@ -189,8 +243,8 @@ margin: 0 auto !important;
 .index-searcher{
   display: flex;
   flex-direction: column;
-  position: relative;
-  top: 20%;
+  margin-top: 180px;
+
 }
 
 .form-control::placeholder {
@@ -206,12 +260,17 @@ margin: 0 auto !important;
   padding: .5rem 1rem;
 }
 
-.categories{
-display: flex;
-flex-direction: column;
-}
 
-/*---------BURGER MENU---------*/
+
+
+
+
+
+
+
+
+
+/*-----------------------------BURGER MENU*/
 
 
 
@@ -350,185 +409,88 @@ flex-direction: column;
 
 
 .signup, .login, .signout{
-
+  
 }
-
+  
 .signup{
   top: 86%;
 }
-
+  
 .login{
   top: 91%;
-
-}
-
-/*---------SIGNUP---------*/
-
-.signup-using-google{
-  cursor: pointer;
-  color: white;
-  background-color: #d84734;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  align-content: flex-start;
-  height: 40px;
-  width: 200px;
-  border-radius: 4px;
-  border-style: none;
-  position: relative;
-  top: 14px;
-  margin: 0 auto;
-}
-.form-group-button-google > a:hover{
-  text-decoration: none;
-
-}
-
-.signup-using-google:hover{
-  background-color: #DD2C00;
-  text-decoration: none;
-}
-.signup-using-google > a{
-  color: white;
-}
-.signup-using-google > a:hover{
-  color: white;
-  text-decoration: none;
-}
-
-.signup-container, .login-container {
-  width: 100%;
-  height: 100%;
-  background-color: #ECEFF1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
-
-.signup-box, .login-box{
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  margin: 0 auto;
-  background-color: white;
-  border-radius: 6px;
-  height: 80%;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-}
-
-
-#signup-button{
-  cursor: pointer;
-  display: flex;
-  height: 40px;
-  width: 250px;
-  border-radius: 4px;
-  border-style: none;
-  margin: 0 auto;
   
 }
 
-.form-group-button-google{
-  margin-bottom: 30px;
-}
-
-.btn-color{
-  background-color: #EF6C00;
-  border: none;
-  width: 40%;
-}
-
-.btn-color:hover {
-  background-color: #FFA726;
-}
-
-.signup-form, .login-form{
-justify-content: center;
-align-items: center;
-align-content: center;
-display: flex;
-flex-direction: column;
-}
-
-
-
-.go-to-login{
-  color: #EF6C00;
- 
-
-}
-.go-to-login:hover{
-  color: #37474F;
-  text-decoration: none;
- 
-
-}
-
-.button-login{
-  justify-content: center;
-	align-items: center;
-  align-content: center;
-  margin: 0 auto;
-}
-
-#emailHelp{
-  text-align: center;
-}
-
-
-.signup-div > a, .login-div > a{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #263238;
-}
-
-.signup-div > a:hover, .login-div > a:hover{
-  text-decoration: none;
-  color: #EF6C00;  
-}
-
-
-
-.error-message{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #D50000;
-  font-size: 0.9em;
-}
-.already-account{
-  position: relative;
-  bottom: 10px;
-}
-
-.go-home-logo{
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.go-home-button{
+.logout-button{
   cursor: pointer;
   color: white;
-  background-color: #0D47A1;
-  padding: 4px 5px;
+  background-color: #d84734;
+  padding: 10px 20px;
   border-radius: 4px;
-  position: absolute;
-  top: 3%;
-  left: 5%;
-  position: absolute;
+  top: 14px;
 }
 
-.go-home-button:hover{
+.logout-button:hover{
   text-decoration: none;
-  background-color: #1565C0;
+  background-color: #D50000;
   color: white;
 }
 
-/*---------FOOTER---------*/
+
+
+
+
+
+
+/*-----------------------------CATEGORIES*/
+.categories{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  top: 30%;
+  width: 100%;
+}
+  
+.cats{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 70%;
+  justify-content: center;
+}
+  
+.cat {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+}
+  
+.cat-atri{
+  margin-right: 0px;
+  margin-bottom: 30px;
+    
+}
+  
+.cat-title{
+  font-family: 'Roboto Mono', monospace;
+  font-size: 2em;
+  color: #263238;
+  margin-bottom: 60px;
+  margin-top: 60px;
+  
+}
+
+
+
+
+
+
+
+
+/*-------------------FOOTER-------------------*/
 
 footer{
   background-color: #263238;
@@ -560,39 +522,244 @@ footer{
 	align-items: flex-end;
 	align-content: center;
 }
+
 .fa-instagram, .fa-twitter, .fa-facebook{
   color: #CFD8DC;
   margin-right: 10px;
 }
 
-.join-the-comunity{
-  display: none;
-}
 
-.logout-button{
+
+
+
+
+
+
+
+/*-------------------------SIGNUP-PAGE---------------------------*/
+
+.signup-using-google{
   cursor: pointer;
   color: white;
   background-color: #d84734;
-  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  height: 40px;
+  width: 200px;
   border-radius: 4px;
+  border-style: none;
+  position: relative;
   top: 14px;
+  margin: 0 auto;
 }
 
-.logout-button:hover{
+#signup-button{
+  cursor: pointer;
+  display: flex;
+  height: 40px;
+  width: 250px;
+  border-radius: 4px;
+  border-style: none;
+  margin: 0 auto;
+  
+}
+
+.go-to-login{
+  color: #EF6C00;
+ 
+}
+
+.go-to-login:hover{
+  color: #37474F;
   text-decoration: none;
-  background-color: #D50000;
+ 
+}
+
+.already-account{
+  position: relative;
+  bottom: 10px;
+}
+
+/*------------GOOGLE BUTTON*/
+
+.form-group-button-google > a:hover{
+  text-decoration: none;
+
+}
+
+.signup-using-google:hover{
+  background-color: #DD2C00;
+  text-decoration: none;
+}
+.signup-using-google > a{
+  color: white;
+}
+.signup-using-google > a:hover{
+  color: white;
+  text-decoration: none;
+}
+
+/*-----------------------------BOTH SIGNUP & LOGIN*/
+
+.signup-container, .login-container {
+  width: 100%;
+  background-color: #ECEFF1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.signup-box, .login-box{
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 6px;
+  height: 80%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.signup-form, .login-form{
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group-button-google{
+  margin-bottom: 30px;
+}
+
+.btn-color{
+  background-color: #EF6C00;
+  border: none;
+  width: 40%;
+}
+
+.btn-color:hover {
+  background-color: #FFA726;
+}
+
+
+.signup-div > a, .login-div > a{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #263238;
+}
+
+.signup-div > a:hover, .login-div > a:hover{
+  text-decoration: none;
+  color: #EF6C00;  
+}
+
+#emailHelp{
+  text-align: center;
+}
+
+.error-message{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #D50000;
+  font-size: 0.9em;
+}
+
+.go-home-logo{
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.go-home-button{
+  cursor: pointer;
+  color: white;
+  background-color: #0D47A1;
+  padding: 4px 5px;
+  border-radius: 4px;
+  position: absolute;
+  top: 3%;
+  left: 5%;
+  position: absolute;
+}
+
+.go-home-button:hover{
+  text-decoration: none;
+  background-color: #1565C0;
   color: white;
 }
 
-/*---------THINGS---------*/
-#map {
-  height: 500px;
-  width: 100%;
+
+/*-------------------------LOGIN-PAGE---------------------------*/
+
+
+.button-login{
+  justify-content: center;
+	align-items: center;
+  align-content: center;
+  margin: 0 auto;
 }
 
-/*---------QUERIES---------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------------THINGS---------------------------*/
+#map {
+display: none;
+}
+
+
+
+.list-things-container{
+  display: flex;
+  flex-direction: row;
+  
+}
+
+
+.list-of-things{
+  height: 100%;
+  width: 50%;
+}
+
+
+
+.thing-itself{
+
+}
+
+
+.things-searcher{
+  margin: 0;
+  padding: 0;
+}
+
+
+/*-------------------------QUERIES---------------------------*/
 
 @media (orientation:landscape) {
+
+/*---------LANDING PAGE---------*/
 
 .logo-menu{
   width: 110px;
@@ -604,6 +771,14 @@ footer{
   width: 520px;
 }
 
+
+
+
+
+
+
+
+/*---------BOOTSTRAP SEARCHER---------*/
 .form-inline{
   margin-top: 30px;
 }
@@ -612,15 +787,11 @@ footer{
 width: 400px !important;
 }
 
-.btn-color{
-  width: 60%;
-}
 
 
-.logo-error-page{
-  width: 10%;
-  height: auto;
-}
+
+
+/*---FOOTER---*/
 footer{
   background-color: #263238;
   width: 100%;
@@ -658,6 +829,30 @@ footer{
   margin-right: 10px;
 }
 
+
+/*---------LOGIN & SIGNUP---------*/
+.btn-color{
+  width: 60%;
+}
+
+
+.signup-box, .login-box{
+  width: 30%;
+  height: 77%;
+}
+
+
+/*---------ERROR PAGE---------*/
+.logo-error-page{
+  width: 10%;
+  height: auto;
+}
+
+
+
+
+
+/*---------BURGER MENU---------*/
 #menuToggle {
   display: block;
   position: fixed;
@@ -665,32 +860,78 @@ footer{
   left: 50px;
 }
 
-.comunity-of-makers{
+
+
+/*---------CATEGORIES---------*/
+.categories{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  top: 30%;
   width: 100%;
-  height: 50px;
-  background-color:#ECEFF1 ;
-  z-index: 93;
+  }
+  
+  .cats{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 70%;
+    justify-content: center;
+  }
+  
+  .cat {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .cat-atri{
+    margin-right: 30px;
+    margin-bottom: 30px;
+    
+  }
+  
+  .cat-title{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2em;
+    color: #263238;
+    margin-bottom: 60px;
+    margin-top: 60px;
+  
+  }
+
+
+/*-------------------------THINGS---------------------------*/
+#map {
+  /* height: 500px;
+  width: 100%; */
+  width: 50%;
+  height: 100vh;
   position: fixed;
+  display: block;
+}
+
+
+
+.list-things-container{
   display: flex;
   flex-direction: row;
-  justify-content: center;
-	align-items: center;
-  align-content: center;
-  border-bottom: 0.5px solid #B0BEC5
   
 }
 
-.join-the-comunity{
-  display: inline;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #37474F;
+
+.list-of-things{
+  height: 100%;
+  width: 50%;
 }
 
-.signup-box, .login-box{
-  width: 30%;
-  height: 77%;
+
+
+.thing-itself{
+  background-color: red;
 }
 
 }
-@media ( min-width: 1000px) {}
