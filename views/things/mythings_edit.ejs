@@ -1,0 +1,23 @@
+<h2>Edit My Things</h2>
+
+    <form action="/mythings/edit/<%= thing.id %>" method="POST">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title" value="<%= thing.title %>" />
+        </div>
+        <div class="form-group">
+            <label for="localitzation">Localitzation</label>
+            <input type="text" class="form-control" name="localitzation" value="<%= thing.localitzation %>" />
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" name="price" value="<%= thing.price %>" />
+        </div>
+        
+        <button class="btn btn-default"><a href="/mythings">Go back</a></button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+    </form>
+
+ 
+
+

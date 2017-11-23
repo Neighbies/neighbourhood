@@ -38,13 +38,11 @@ router.post('/profile/edit', (req, res, next) => {
     telephone: req.body.telephone,
     location: req.body.location
   };
-  console.log(userUpdate);
 
   User.findByIdAndUpdate(userId, userUpdate, (err, user) => {
     if (err) {
       return next(err);
     }
-    console.log(user);
     res.redirect('/');
   });
 });
