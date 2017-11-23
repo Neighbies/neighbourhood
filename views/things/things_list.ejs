@@ -1,48 +1,61 @@
 <!-- LIST OF THINGS -->
 
 <div class="list-things-container">
-
-
-
-    <!-- THINGS HERE -->
-    <div class="list-of-things">
+      
+     <div class="top-bar-things">
         <!-- SEARCHER -->
-        <div class="index-searcher things-searcher">
-            <nav class="navbar navbar-light">
-                <form class="form-inline" action="/things" method="GET">
-                    <input class="form-control mr-sm-2 middle-searcher searcher" name="terms" type="search" placeholder="What are you looking for?"
+            <div class="index-searcher things-searcher">
+                <a href="/">
+                     <img class="logo-back-home" src="/pictures/logo-nou.png"> 
+                 </a>
+                <nav class="navbar navbar-light navbar-things">
+                    <form class="form-inline form-inline-things" action="/things" method="GET">
+                        <input class="form-control mr-sm-2 middle-searcher searcher" name="terms" type="search" placeholder="What are you looking for?"
                         aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0 middle-button" type="submit">Search</button>
-                </form>
-            </nav>
-        </div>
+                         <button class="btn btn-outline-success my-2 my-sm-0 middle-button" type="submit">Search</button>
+                    </form>
+                </nav>
+            </div>
+     </div>
 
-
-
-        <% data.forEach(thing => { %>
-            <div class="thing-itself">
-                <a href="/things/<%=thing.id%>">
-                    <img src="<%= thing.pic_path %>/<%= thing.pic_name %>" alt="">
-                </a>
-                <p>
-                    <%= thing.title %>
+    <div class="things-plus-map">
+            <div class="things-here">
+                <!-- THINGS HERE -->
+                <% data.forEach(thing => { %>
+                <div class="thing-itself">
+                    <a href="/things/<%=thing.id%>">
+                         <img src="<%= thing.pic_path %>/<%= thing.pic_name %>" alt="">
+                     </a>
+                     <p>
+                         <%= thing.title %>
                         <strong>
                             <%= thing.price %>$
                         </strong>
-                </p>
+                     </p>
+
+                </div>
+
+                <br />
+                 <% }); %>
+
 
             </div>
-            <br />
-            <% }); %>
+
+        <!-- GOOGLE MAPS -->
+            <div class="map-wrapper"
+             <div id="map"></div>
+             </div>
+         </div>
+
+    
 
 
-    </div>
 
-    <!-- GOOGLE MAPS -->
-
-<div id="map"></div>
 
 </div>
+
+
+
 
 
 
