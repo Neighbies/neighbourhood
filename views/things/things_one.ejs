@@ -1,51 +1,74 @@
-<% if (userPic !== undefined) { %>
-    <a href="/profile"><img src="<%=userPic.path%>/<%=userPic.name%>" alt=""></a>
-    <a href="/logout">Logout</a>
-    <a href="/mythings">My things</a>
- <% } else { %>
-    <a href="/signup">Sign up</a>
-    <a href="/login">Log in</a>    
- <% } %>
 
-<div>
-    <img src="<%= thing.pic_path %>/<%= thing.pic_name %>" alt="">
-</div>
-<div>
-    <ul>
-        <li>
-            <%=thing.title%>
-        </li>
-        <li>
-            <%=user.username%>
-        </li>
-        <li>
-            <%=thing.localitzation%>
-        </li>
-        <li>
-            <%=thing.price%>
-        </li>
-    </ul>
-</div>
-<div>
-    <p>
-        <%=thing.description%>
-    </p>
-</div>
+<!-- THING -->
 
-<div>
-    <h2>Contact me</h2>
+<div class="thing-container">
+    <div class="top-margin-thing">
+        <a class="go-landing" href="/">
+            <img class="logo-menu-thing" src="/pictures/logo-nou-blanc.png">
+        </a>
 
-    <% if (!loggedIn) { %>
+    </div>
+    <% if (userPic !== undefined) { %>
+        <a href="/profile"><img src="<%=userPic.path%>/<%=userPic.name%>" alt=""></a>
+        <a href="/logout">Logout</a>
+        <a href="/mythings">My things</a>
+     <% } else { %>
+        <a href="/signup">Sign up</a>
+        <a href="/login">Log in</a>    
+     <% } %>
+
+    <div class="thing-chart">
+        <div class="thing-pic-chart">
+            <img src="<%= thing.pic_path %>/<%= thing.pic_name %>" alt="">
+        </div>
+
+        <div class="thing-atributes">
+            
+                <p class="other-atributes-thing">
+                    <%=user.username%>
+                </p>
+                <p class="other-atributes-thing">
+                    <%=thing.localitzation%>
+                </p>
+                <p class="one-thing-price">
+                    <%=thing.price%> €
+                </p>
+            
+        </div>   
+
+        <div class="thing-title-thing">
+                <%=thing.title%>
+        </div>
+
+        <div class="thing-description-thing">
+            <p>
+                <%=thing.description%>
+            </p>
+        </div>
+
+    </div>
+
+    
+
+    <div>
+        <h2>Contact me</h2>
+
+        <% if (!loggedIn) { %>
         <a href="/login">
             <button>Log in to contact</button>
         </a>
         <% } else { %>
-            <p>
-                <%=user.email%>
-            </p>
-            <p>
-                <%=user.telephone%>
-            </p>
-            <button>Message me</button>
+        <p>
+            <%=user.email%>
+        </p>
+        <p>
+            <%=user.telephone%>
+        </p>
+        
+        <button>Message me</button>
             <% } %>
+    </div>
+
+
 </div>
+

@@ -779,10 +779,12 @@ footer{
 .things-here{
   display: flex;
   width: 70%;
-  margin-top: 114px;
+  position: relative;
+  top: 114px;
   flex-wrap: wrap;
   justify-content: center;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .thing-description{
@@ -793,16 +795,101 @@ footer{
 .thing-price{
   font-family: 'Roboto Mono', monospace;
   color: #D32F2F;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 2em;
 
+}
+/*-------------------------THING---------------------------*/
+
+.top-margin-thing{
+  width: 100%;
+  height: 14%;
+  display: flex;
+  flex-direction: column;
+  background-color: #FF9100;
+  position: fixed;
+  z-index:1;
+  padding-left: 30px;
+ 
+}
+
+.logo-menu-thing{
+  width: 60px;
 }
 
 
+.top-margin-thing{
+  display: flex;
+  flex-direction: row;
+	align-items: center;
+}
+
+.thing-pic-chart{
+  width: 21%;
+}
 
 
+.thing-chart{
+  position: relative;
+  top: 214px;
+  padding-left: 3%;
+  padding-right: 5%;
+}
 
 
-/*-------------------------QUERIES---------------------------*/
+.thing-atributes{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.thing-atributes > p{
+  margin-right: 30px;
+}
+
+.thing-atributes > ul{
+list-style-type: none;
+font-family: 'Roboto Mono', monospace;
+font-style: Bold;
+justify-content: center;
+align-items: center;
+align-content: center;
+}
+
+.thing-description-thing{
+  width: 50%;
+  font-family: Roboto;
+  color: #37474F;
+}
+
+.thing-title-thing{
+  font-family: 'Roboto Mono', monospace;
+  color: #FF9034;
+  font-weight: 700;
+  font-size: 1.8em;
+  width: 30%;
+  line-height: 38px;
+  margin-bottom: 30px;
+}
+
+.one-thing-price{
+  font-family: 'Roboto Mono', monospace;
+  color: #D32F2F;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+
+.other-atributes-thing{
+  color: #78909C;
+  font-family: 'Roboto', sans-serif;
+
+
+}
+
+/*---------------------------------------------------------------------------------------------------------------------QUERIES---------------------------*/
 /*-------------------------QUERY DESKTOP---------------------------*/
 
 @media (orientation:landscape) {
@@ -1066,6 +1153,7 @@ footer{
 
   .thing-itself{
     padding: 30px;
+    width: 50%;
   }
 
   
@@ -1079,6 +1167,10 @@ footer{
     color: white;
   }
 
+  .things-here{
+    position: relative;
+    top: 114px;
+  }
 }
 
 
@@ -1146,6 +1238,90 @@ footer{
 
 
 
+/*-------------------------LOGIN-SIGNUP---------------------------*/
+
+  .signup-box, .login-box {
+    border-radius: 96px;
+  }
+
+  .go-home-button {
+    border-radius: 24px;
+    width: 35%;
+    height: 6%;
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+  }
+
+  .signup-using-google{
+    height: 80%;
+    width: 90%;
+    border-radius: 24px;
+  }
+
+  .fa {
+    margin-right: 23px;
+  }
+
+  .form-group-button-google {
+    height: 20%;
+    width: 80%;
+  }
+  
+  .btn-color{
+    height: 16%;
+    width: 73%;
+    border-radius: 24px;
+    font-size: 3em;
+  }
+
+  .go-home-logo{
+    margin-bottom: 7%;
+  }
+
+  .already-account {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-size: 3em;
+  } 
+
+  .form-group {
+    margin-bottom: 1rem;
+    height: 20%;
+    width: 70%;
+  }
+
+  .form-group > input{
+  height: 86%;
+  }
+/*-------------------------SIGNUP---------------------------*/
+
+  .signup-form {
+    height: 73%;
+  }
+
+
+
+  
+
+  /*-------------------------LOGIN---------------------------*/
+  .login-form {
+    width: 100%;
+    height: 50%;
+  }
+
+  .signup-using-google > a {
+    font-size: 2.5em;
+  }
+
+
+
+
+
+
   /*-------------------------BURGER---------------------------*/
   #menuToggle span {
     
@@ -1189,5 +1365,13 @@ footer{
   .thing-img{
     width: 100%;
     height: auto;
+  }
+
+  .things-here{
+    margin-top: 344px;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
   }
 }
