@@ -22,7 +22,7 @@ html {
 }
 
 
-/* div{
+ /* div{
   border: 1px solid black;
 } */
 
@@ -716,9 +716,7 @@ footer{
 
 /*-------------------------THINGS---------------------------*/
 #map {
-  display: none;
   position: fixed;
-  z-index: 0;
 }
 
 .things-plus-map{
@@ -730,6 +728,7 @@ footer{
 .list-things-container{
   display: flex;
   flex-direction: column;
+  margin-bottom: 180px;
   
 }
 
@@ -778,13 +777,10 @@ footer{
 
 .things-here{
   display: flex;
-  width: 70%;
+  width: 50%;
   position: relative;
   top: 114px;
   flex-wrap: wrap;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .thing-description{
@@ -839,11 +835,13 @@ footer{
   align-content: center;
   
 }
+
+
 .form-inline .form-control {
   display: inline-block;
   width: auto;
   vertical-align: middle;
-  border-radius:.25rem;
+ 
 }
 
 .thing-chart{
@@ -851,8 +849,12 @@ footer{
   top: 214px;
   padding-left: 3%;
   padding-right: 5%;
+  width: 100%;
 }
 
+.contact-chart{
+width: 50%;
+}
 
 .thing-atributes{
   list-style: none;
@@ -898,7 +900,7 @@ align-content: center;
 }
 
 .thing-description-thing{
-  width: 50%;
+  width: 75%;
   font-family: Roboto;
   color: #37474F;
 }
@@ -928,7 +930,13 @@ align-content: center;
 
 }
 
-/*---------------------------------------------------------------------------------------------------------------------QUERIES---------------------------*/
+
+.flex-box-thing-thing{
+  display: flex;
+  flex-direction: row;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------QUERIES---------------------------*/
 /*-------------------------QUERY DESKTOP---------------------------*/
 
 @media (orientation:landscape) {
@@ -949,7 +957,7 @@ align-content: center;
     display: inline;
     color: #CFD8DC;
     margin-right: 10px;
-    font-size: 2em;
+    font-size: 1em;
   }
 
   .background-index{
@@ -1128,6 +1136,40 @@ align-content: center;
   }
 
 
+  .username-burger-landing{
+    font-family: 'Roboto Mono', monospace;
+
+  }
+
+  .pic-burger-landing-a{
+    width: 70px;
+    margin-bottom: 10px;
+  }
+
+  .pic-burger-landing-img{
+    width: 70px;
+    margin-bottom: 10px;
+  }
+
+  .my-things-burger-landing{
+    background-color: #CFD8DC;
+    color: #263238;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  .my-things-burger-landing:hover{
+    text-decoration: none;
+    color: white;
+    background-color: #E65100;
+  }
+
+.logout-div{
+  margin-top: 20px;
+}
+
+
 
   /*---------CATEGORIES---------*/
   .categories{
@@ -1172,12 +1214,18 @@ align-content: center;
 
 
   /*-------------------------THINGS---------------------------*/
-  #map {
-    display: block;
-    width: 50%;
-    height: 100vh;
+  .map-wrapper {
     position: fixed;
-    display: block;
+    left: 50%;
+    width: 50vw;
+    height: 100vh;
+  }
+
+  #map {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    
   }
 
 
@@ -1210,11 +1258,223 @@ align-content: center;
     position: relative;
     top: 114px;
   }
+  .user-info-thing-list{
+    position: relative;
+    right: 19%;
+  }
+
+  .login-button-things-list{
+    background-color: #CFD8DC;
+    font-family: 'Roboto Mono', monospace;
+    color: #263238;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 10px;
+    text-decoration: none;
+
+  }
+
+  .signup-button-things-list{
+    background-color: #CFD8DC;
+    font-family: 'Roboto Mono', monospace;
+    color: #263238;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    
+  }
+
+  .signup-button-things-list:hover{
+    text-decoration: none;
+    color: white;
+    background-color: #E65100;
+  }
+
+
+
+  .login-button-things-list:hover{
+    text-decoration: none;
+    color: white;
+    background-color: #E65100;
+  }
+
+  .profile-pic-things-list-a{
+    width: 50px;
+  }
+  .profile-pic-things-list-img{
+    width: 50px;
+  }
+
+
+
+  .logout-button-things-list{
+    cursor: pointer;
+    color: white;
+    background-color: #d84734;
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+  .logout-button-things-list:hover{
+    text-decoration: none;
+    background-color: #D50000;
+    color: white;
+  }
+  .my-things-things-list{
+    background-color: #CFD8DC;
+    color: #263238;
+    padding: 10px;
+    border-radius: 5px;
+
+  }
+
+  .my-things-things-list:hover{   
+    text-decoration: none;
+    color: white;
+    background-color: #E65100;
+  }
+
+
+
+
+
+
+
+
+  .login-button-things-one{
+    background-color: #CFD8DC;
+    font-family: 'Roboto Mono', monospace;
+    color: #263238;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 10px;
+    text-decoration: none;
+
+  }
+
+  .signup-button-things-one{
+    background-color: #CFD8DC;
+    font-family: 'Roboto Mono', monospace;
+    color: #263238;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    
+  }
+
+  .signup-button-things-one:hover{
+    text-decoration: none;
+    color: white;
+    background-color: #E65100;
+  }
+
+
+
+  .login-button-things-one:hover{
+    text-decoration: none;
+    color: white;
+    background-color: #E65100;
+  }
+
+
+
+
+
+
+
+  
+  /*-------------------------ONE THING---------------------------*/
+  
+  .user-info-thing-one{
+    position: relative;
+    left: 3%;
+  }
+
+  .profile-things-one-a{
+    width: 50px;
+  }
+
+  .profile-pic-things-one-img{
+    width: 50px;
+  }
+
+  .my-things-things-one{
+    background-color: #CFD8DC;
+    color: #263238;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .my-things-things-one:hover{
+    text-decoration: none;
+    color: white;
+    background-color: #E65100;
+  }
+
+  .logout-button-things-one{
+    cursor: pointer;
+    color: white;
+    background-color: #d84734;
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+
+  .logout-button-things-one:hover{
+    text-decoration: none;
+    background-color: #D50000;
+    color: white;
+  }
+
+  .contact-chart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  
+  .card{
+    font-family: 'Roboto Mono', monospace;
+
+  }
+
+
+
+
+  .login-to-contact{
+    background-color: #CFD8DC;
+    font-family: 'Roboto Mono', monospace;
+    color: #263238;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+
+  }
+
+  .card-text{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: #78909C;  
+  }
+
+  .login-to-contact:hover{
+    text-decoration: none;
+    color: white;
+    background-color: #E65100;
+  }
+
+  .message-me{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2em;
+    color: #F44336;
+  }
+  
+  
 }
 
 
 
-/*-------------------------QUERY MOBILE---------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------QUERY MOBILE---------------------------*/
 
 
 @media (orientation:portrait) {
@@ -1405,12 +1665,15 @@ align-content: center;
     width: 100%;
     height: auto;
   }
-
+  
   .things-here{
     margin-top: 344px;
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
-}
+    width: 70%;
   }
+  
+
+  
 }
