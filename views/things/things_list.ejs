@@ -6,29 +6,39 @@
         <!-- SEARCHER -->
             <div class="index-searcher things-searcher">
                 <a href="/">
-                     <img class="logo-back-home" src="/pictures/logo-nou.png"> 
+                     <img class="logo-back-home" src="/pictures/logo-nou-blanc.png"> 
                  </a>
                 <nav class="navbar navbar-light navbar-things">
                     <form class="form-inline form-inline-things" action="/things" method="GET">
                         <input class="form-control mr-sm-2 middle-searcher searcher" name="terms" type="search" placeholder="What are you looking for?"
                         aria-label="Search">
-                         <button class="btn btn-outline-success my-2 my-sm-0 middle-button" type="submit">Search</button>
+                         <button class="btn btn-outline-success my-2 my-sm-0 middle-button button-things" type="submit">Search</button>
                     </form>
                 </nav>
             </div>
      </div>
-
+     <% if (userPic !== undefined) { %>
+        <a href="/profile"><img src="<%=userPic.path%>/<%=userPic.name%>" alt=""></a>
+        <a href="/logout">Logout</a>
+        <a href="/mythings">My things</a>
+     <% } else { %>
+        <a href="/signup">Sign up</a>
+        <a href="/login">Log in</a>    
+     <% } %>
+    
+     
     <div class="things-plus-map">
             <div class="things-here">
                 <!-- THINGS HERE -->
                 <% data.forEach(thing => { %>
                 <div class="thing-itself">
-                    <a href="/things/<%=thing.id%>">
-                         <img src="<%= thing.pic_path %>/<%= thing.pic_name %>" alt="">
+                    <a class="thing-link" href="/things/<%=thing.id%>">
+                         <img class="thing-img" src="<%= thing.pic_path %>/<%= thing.pic_name %>" alt="">
                      </a>
-                     <p>
-                         <%= thing.title %>
-                        <strong>
+                     <p class="thing-description">
+                         <%= thing.title %> <%= thing.localitzation %>
+                     </br>
+                        <strong class="thing-price">
                             <%= thing.price %>$
                         </strong>
                      </p>

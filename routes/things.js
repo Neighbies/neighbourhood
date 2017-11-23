@@ -9,6 +9,7 @@ const User = require('../models/user');
 router.get('/things', (req, res, next) => {
   const catId = req.query.cat;
   const terms = req.query.terms;
+  let userPic;
   let findQuery = {};
 
   if (catId !== undefined && terms !== undefined) {
@@ -30,28 +31,36 @@ router.get('/things', (req, res, next) => {
     if (err) {
       return next(err);
     }
-    // const locations = [];
-    // thing.forEach(doc => {
-    //   locations.push(doc.localitzation);
-    // });
-    res.render('things/things_list', { data: thing });
+    if (req.user !== undefined) {
+      userPic = {
+        path: req.user.prof_pic_path,
+        name: req.user.prof_pic_name
+      };
+    }
+    res.render('things/things_list', { data: thing, userPic });
   });
 });
 
 // --- GET individual thing --- //
 router.get('/things/:id', (req, res, next) => {
   const thingId = req.params.id;
+  let userPic;
+
   Thing.findById(thingId, (err, thing) => {
     if (err) {
       return next(err);
     }
-    console.log(thing.user);
     User.findById(thing.user, (err, user) => {
       if (err) {
         return next(err);
       }
-      console.log(req.isAuthenticated());
-      res.render('things/things_one', { loggedIn: req.isAuthenticated(), thing, user });
+      if (req.user !== undefined) {
+        userPic = {
+          path: req.user.prof_pic_path,
+          name: req.user.prof_pic_name
+        };
+      }
+      res.render('things/things_one', { loggedIn: req.isAuthenticated(), thing, user, userPic });
     });
   });
 });

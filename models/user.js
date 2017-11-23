@@ -11,7 +11,7 @@ const userSchema = new Schema({
   things: [
     { type: mongoose.Schema.Types.ObjectId, ref: 'Thing' }
   ],
-  location: { type: { type: String }, coordinates: [Number] },
+  location: String,
   googleID: String
 }, {
   timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }

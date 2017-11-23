@@ -48,7 +48,9 @@ router.post('/signup', (req, res, next) => {
     const newUser = new User({
       username: usernameInput,
       email: emailInput,
-      password: hashPass
+      password: hashPass,
+      prof_pic_path: '/pictures',
+      prof_pic_name: 'avatar.png'
     });
 
     newUser.save((err) => {

@@ -49,7 +49,12 @@ function startMap () {
           var marker = new google.maps.Marker({
             map: resultsMap,
             label: String(thing.price + '$'),
-            position: results[0].geometry.location
+            position: results[0].geometry.location,
+            icon: '/pictures/chat5.png'
+          });
+          marker.addListener('click', function () {
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+            window.location.href = `/things/${thing._id}`;
           });
         } else {
           alert('Geocode was not successful for the following reason: ', status);
@@ -58,5 +63,4 @@ function startMap () {
     });
   }
 }
-console.log(things);
 startMap();
