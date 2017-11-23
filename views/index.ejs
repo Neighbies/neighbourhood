@@ -31,10 +31,11 @@
               <a class="login" href="/login">Log in</a>
             </div>
             <% } else { %>
-              <div class="logout-div">
-                <p><%= user.username %></p>
-                <a href="/profile"><img src="<%= user.prof_pic_path %>/<%= user.prof_pic_name %>" alt=""></a>
-                <a href="/mythings">My things</a>
+              
+                <a class="pic-burger-landing-a"href="/profile"><img class="pic-burger-landing-img" src="<%= user.prof_pic_path %>/<%= user.prof_pic_name %>" alt=""></a> 
+                <p class="username-burger-landing"><%= user.username %></p>
+                <a class="my-things-burger-landing"href="/mythings">My things</a>
+                <div class="logout-div"></div>
                 <a class="logout-button" href="/logout">Log out</a>
               </div>
               <% } %>

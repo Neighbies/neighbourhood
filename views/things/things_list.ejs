@@ -3,11 +3,25 @@
 <div class="list-things-container">
       
      <div class="top-bar-things">
-        <!-- SEARCHER -->
+       
             <div class="index-searcher things-searcher">
                 <a href="/">
                      <img class="logo-back-home" src="/pictures/logo-nou-blanc.png"> 
                  </a>
+
+                   <!-- USER INFO -->
+             <div class="user-info-thing-list">
+                <% if (userPic !== undefined) { %>
+                    <a class= "profile-pic-things-list-a" href="/profile"><img class= "profile-pic-things-list-img" src="<%=userPic.path%>/<%=userPic.name%>" alt=""></a>
+                    <a class= "my-things-things-list" href="/mythings">My things</a>
+                    <a class= "logout-button-things-list" href="/logout">Logout</a>
+                    
+                <% } else { %>
+                     <a class="signup-button-things-list" href="/signup">Sign up</a>
+                     <a class="login-button-things-list" href="/login">Log in</a>
+                 <% } %>
+             </div> 
+    <!-- SEARCHER -->
                 <nav class="navbar navbar-light navbar-things">
                     <form class="form-inline form-inline-things" action="/things" method="GET">
                         <input class="form-control mr-sm-2 middle-searcher searcher" name="terms" type="search" placeholder="What are you looking for?"
@@ -16,19 +30,16 @@
                     </form>
                 </nav>
             </div>
-     </div>
-     <% if (userPic !== undefined) { %>
-        <a href="/profile"><img src="<%=userPic.path%>/<%=userPic.name%>" alt=""></a>
-        <a href="/logout">Logout</a>
-        <a href="/mythings">My things</a>
-     <% } else { %>
-        <a href="/signup">Sign up</a>
-        <a href="/login">Log in</a>    
-     <% } %>
+
+      
+    </div>
+
+    
     
      
+    
     <div class="things-plus-map">
-            <div class="things-here">
+        <div class="things-here">
                 <!-- THINGS HERE -->
                 <% data.forEach(thing => { %>
                 <div class="thing-itself">
@@ -49,16 +60,16 @@
                  <% }); %>
 
 
-            </div>
+        </div>
 
-        <!-- GOOGLE MAPS -->
-            <div class="map-wrapper"
+
+
+
+            <!-- GOOGLE MAPS -->
+            <div class="map-wrapper">
              <div id="map"></div>
              </div>
-         </div>
-
-    
-
+    </div>
 
 
 
