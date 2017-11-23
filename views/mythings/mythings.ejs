@@ -1,3 +1,7 @@
+<form action="mythings/add" action="POST">
+    <button type="submit" class="btn btn-default"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+</form>
+
 <% things.forEach(thing => { %>
     <div class="card" style="width:20rem;">
         <img class="thing-img card-img-top" src="<%= thing.pic_path %>/<%= thing.pic_name %>" alt="">
@@ -8,7 +12,6 @@
             <a href="/mythings/edit/<%= thing.id %>" class="btn btn-primary">Edit</a>
         </div>
     </div>
-
 <% }); %>
  
 

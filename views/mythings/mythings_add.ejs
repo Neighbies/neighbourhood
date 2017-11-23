@@ -1,0 +1,66 @@
+<div class="container mt-2">
+    <div class="col-6">
+        <h2>Add new thing</h2>
+   
+        <form action="/mythings/add" method="POST">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" name="title" />
+            </div>
+            <div class="form-group">
+                <label for="localitzation">Localitzation</label>
+                <input type="text" class="form-control" name="localitzation" />
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" name="price" />
+            </div>
+            <div class="form-group">
+                <input type="file" class="form-control-file" name="thing-pic" />
+            </div>
+
+            <!-- Categories checkbox -->
+            <div class="col-4">
+                <div class="form-check">
+                    <label for="categories">
+                        <input type="checkbox" class="form-check-input" name="categories" value="Music" />
+                        Music
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label for="categories">
+                    <input type="checkbox" class="form-check-input" name="categories" value="Home" />
+                        Home
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label for="categories">
+                        <input type="checkbox" class="form-check-input" name="categories" value="Animals" />
+                        Animals
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label for="categories">
+                        <input type="checkbox" class="form-check-input" name="categories" value="Deliveries" />
+                        Deliveries
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label for="categories">
+                        <input type="checkbox" class="form-check-input" name="categories" value="Transportation" />
+                        Transportation
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label for="categories">
+                        <input type="checkbox" class="form-check-input" name="categories" value="Teaching" />
+                        Teaching
+                    </label>
+                </div>
+            </div>
+                
+            <a href="/mythings" class="btn btn-danger">Cancel</a>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+        </form>
+    </div>
+</div>

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-// const Category = require('../models/category');
+const Category = require('../models/category');
 const Thing = require('../models/thing');
 // const User = require('../models/user');
 
@@ -14,7 +14,7 @@ router.get('/mythings', ensureAuthenticated, (req, res, next) => {
     const data = {
       things: result
     };
-    res.render('things/mythings', data);
+    res.render('mythings/mythings', data);
   });
 });
 
@@ -26,8 +26,13 @@ router.get('/mythings/edit/:thingId', ensureAuthenticated, (req, res, next) => {
     if (err) {
       return next(err);
     }
-    res.render('things/mythings_edit', {thing});
+    res.render('mythings/mythings_edit', {thing});
   });
+});
+
+// --- GET show My Things Add Form --- //
+router.get('/mythings/add', ensureAuthenticated, (req, res, next) => {
+  res.render('mythings/mythings_add');
 });
 
 // --- POST edit one of My Things --- //
@@ -56,5 +61,41 @@ function ensureAuthenticated (req, res, next) {
     res.redirect('/login');
   }
 }
+
+// --- POST add new thing --- //
+router.post('/mythings/add', ensureAuthenticated, (req, res, next) => {
+  let categories = [];
+  let promises = [];
+  let counter = 0;
+  let categoriesUser = req.body.categories;
+
+  if (!(req.body.categories instanceof Array)) {
+    categoriesUser = req.body.categories.split(' ');
+  }
+
+  if (categoriesUser !== undefined) {
+    categoriesUser.forEach(category => {
+      promises.push(
+        Category.find({title: category})
+          .then(result => {
+            console.log(result[0]._id);
+            categories.push(result[0]._id);
+          })
+          .catch(err => console.log(err))
+      );
+    });
+    Promise.all(promises).then(() => {
+      console.log(categories);
+    });
+
+// console.log(req.body);
+// const thingInfo = {
+//   title: req.body.title,
+//   localitzation: req.body.localitzation,
+//   price: req.body.price,
+//   categories: categories
+// };
+// res.render('mythings/mythings_add');
+// });
 
 module.exports = router;
