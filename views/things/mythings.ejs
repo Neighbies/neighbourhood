@@ -1,1 +1,12 @@
-my things
+<% things.forEach(thing => { %>
+    <div>
+        <img class="thing-img d-inline" src="<%= thing.pic_path %>/<%= thing.pic_name %>" alt="">
+        <h4 class="d-inline"><%= thing.title %></h4>
+        <p><strong>Localitzation:</strong> <%= thing.localitzation %></p>
+        <p><strong>Price:</strong> <%= thing.price %></p>
+    </div>
+
+<% }); %>
+ 
+
+
