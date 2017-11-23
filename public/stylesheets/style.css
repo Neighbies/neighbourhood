@@ -22,9 +22,9 @@ html {
 }
 
 
-/*div{
+/* div{
   border: 1px solid black;
-}*/
+} */
 
 body{
   width: 100%;
@@ -142,37 +142,11 @@ background-color: #FFA726;
 
 /*---------LANGING PAGE---------*/
 
-/*-------------------TOP BAR-------------------*/
-.join-the-comunity{
+
+/*---------TOP BAR---------*/
+.comunity-of-makers{
   display: none;
 }
-
-.comunity-of-makers{
-  width: 100%;
-  height: 50px;
-  background-color:#ECEFF1 ;
-  z-index: 93;
-  position: fixed;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-	align-items: center;
-  align-content: center;
-  border-bottom: 0.5px solid #B0BEC5
-  
-}
-
-.join-the-comunity{
-  display: inline;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #37474F;
-}
-
-
-
-
-
 
 
 /*---------HEADER---------*/
@@ -230,17 +204,24 @@ background-color: #FFA726;
 
 /*-----------------------------BOOTSTRAP SEARCHER*/
 
-.middle-button {
-margin: 0 auto !important;
-
+ /* .middle-button {
+  height: 80px;
+  width: 160px;
+  background-color: #28a745;
+  color: white;
+  font-size: 2em;
+  border-radius: 20px;
 }
 
 .middle-searcher{
   width: 70% !important;
+  border-radius: 20px;
+  padding-left: 30px;
+  padding-top: 20px;
 }
 
 
-.index-searcher{
+.index-searcher-home{
   display: flex;
   flex-direction: column;
   margin-top: 180px;
@@ -250,24 +231,29 @@ margin: 0 auto !important;
 .form-control::placeholder {
   color: #868e96;
   opacity: 1;
-  font-size: 0.8em !important;
+  font-size: 2.4em !important;
 }
 
+.mr-sm-2{
+  height: 50%;
+}
 
 .navbar {
   justify-content: center !important;
   position: relative;
   padding: .5rem 1rem;
+  height: 180px;
+  margin-top: 40px;
 }
 
-
-
-
-
-
-
-
-
+.form-inline{
+  width: 83%;
+  height: 100%;
+  justify-content: center;
+	align-items: center;
+  align-content: center;
+  
+}   */
 
 
 /*-----------------------------BURGER MENU*/
@@ -297,6 +283,7 @@ margin: 0 auto !important;
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
+  width: 3%;
 }
 
 #menuToggle input
@@ -463,9 +450,10 @@ margin: 0 auto !important;
 }
   
 .cat {
-  width: 250px;
+  width: 630px;
   height: auto;
-  border-radius: 10px;
+  border-radius: 50px;
+  margin-bottom: 50px;
 }
   
 .cat-atri{
@@ -476,7 +464,7 @@ margin: 0 auto !important;
   
 .cat-title{
   font-family: 'Roboto Mono', monospace;
-  font-size: 2em;
+  font-size: 7em;
   color: #263238;
   margin-bottom: 60px;
   margin-top: 60px;
@@ -495,24 +483,24 @@ margin: 0 auto !important;
 footer{
   background-color: #263238;
   width: 100%;
-  height: 50px;
+  height: 80px;
   display: flex;
 	flex-direction: row;
-
 	justify-content: center;
-	align-items: center;
-
+  align-items: center;
+  bottom: 0;
 }
 
 
 .made-with-love{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #CFD8DC;
   font-weight: 100;
-  font-size: 0.5em;
+  font-size: 2em;
   align-content: center;
   justify-content: center;
   margin: 0;
+
 }
 
 .social{
@@ -520,12 +508,14 @@ footer{
   flex-direction: row;
   justify-content: space-between;
 	align-items: flex-end;
-	align-content: center;
+  align-content: center;
+  display: none;
 }
 
 .fa-instagram, .fa-twitter, .fa-facebook{
   color: #CFD8DC;
   margin-right: 10px;
+  font-size: 2em;
 }
 
 
@@ -612,6 +602,7 @@ footer{
   justify-content: center;
   align-items: center;
   align-content: center;
+  height: 100%;
 }
 
 .signup-box, .login-box{
@@ -725,34 +716,75 @@ footer{
 
 /*-------------------------THINGS---------------------------*/
 #map {
-display: none;
+  display: none;
+  position: fixed;
+  z-index: 0;
 }
 
-
+.things-plus-map{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
 
 .list-things-container{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   
 }
 
 
-.list-of-things{
-  height: 100%;
-  width: 50%;
+.top-bar-things{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  position: fixed;
+  z-index:1;
 }
 
+.things-searcher{
+  display: flex;
+  flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+  align-content: space-between;
+  padding-right: 20px;
+  padding-left: 70px;
 
+}
+
+.navbar-things{
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 
 .thing-itself{
 
 }
 
-
-.things-searcher{
-  margin: 0;
-  padding: 0;
+.logo-back-home{
+  width: 50px;
+  height: auto;
 }
+
+
+.form-inline-things{
+  margin: 0 !important;
+}
+
+
+.things-here{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-top: 114px;
+}
+
+
+
 
 
 /*-------------------------QUERIES---------------------------*/
@@ -771,23 +803,117 @@ display: none;
   width: 520px;
 }
 
+.fa-instagram, .fa-twitter, .fa-facebook{
+  display: inline;
+  color: #CFD8DC;
+  margin-right: 10px;
+  font-size: 2em;
+}
 
-
-
-
-
+.background-index{
+  width: 100%;
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  height: auto;
+}
 
 
 /*---------BOOTSTRAP SEARCHER---------*/
-.form-inline{
+.navbar {
+  justify-content: center !important;
+  position: relative;
+  padding: .5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.form-inline {
   margin-top: 30px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  
+}
+.form-inline .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+  border-radius:.25rem;
 }
 
-.searcher{
-width: 400px !important;
+
+.searcher {
+  width: 400px !important;
 }
 
 
+  
+.middle-searcher{
+  width: 70% !important;
+  
+}
+  
+  
+.index-searcher-home{
+  display: flex;
+  flex-direction: column;
+  margin-top: 180px;
+}
+  
+.form-control::placeholder {
+  color: #868e96;
+  opacity: 1;
+  font-size: 0.8em !important;
+}
+  
+.form-control {
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+  
+
+/*-------------------TOP BAR-------------------*/
+.join-the-comunity{
+  display: none;
+}
+
+.comunity-of-makers{
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-color:#ECEFF1 ;
+  z-index: 93;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+	align-items: center;
+  align-content: center;
+  border-bottom: 0.5px solid #B0BEC5
+  
+}
+
+.join-the-comunity{
+  display: inline;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #37474F;
+}
 
 
 
@@ -798,12 +924,11 @@ footer{
   height: 50px;
   display: flex;
 	flex-direction: row;
-
 	justify-content: center;
 	align-items: center;
-  
   padding-right: 50px;
   padding-left: 50px;
+  position: relative;
 }
 
 
@@ -900,14 +1025,13 @@ footer{
     color: #263238;
     margin-bottom: 60px;
     margin-top: 60px;
-  
+    
   }
 
 
 /*-------------------------THINGS---------------------------*/
 #map {
-  /* height: 500px;
-  width: 100%; */
+display: block;
   width: 50%;
   height: 100vh;
   position: fixed;
@@ -915,12 +1039,6 @@ footer{
 }
 
 
-
-.list-things-container{
-  display: flex;
-  flex-direction: row;
-  
-}
 
 
 .list-of-things{
@@ -933,5 +1051,10 @@ footer{
 .thing-itself{
   background-color: red;
 }
+
+.form-inline-things{
+  width: 450px;
+}
+
 
 }
