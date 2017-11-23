@@ -1,6 +1,12 @@
 <h2>My Profile</h2>
 
-<form action="">
+<% if (typeof message != "undefined") { %>
+    <div class="error-message">
+        <%= message %>
+    </div>
+<% } %>
+
+<form action="/profile/edit" method="POST" >
     <div class="form-group">
         <img src="<%= user.prof_pic_path %>/<%= user.prof_pic_name %>" alt="">
         <input type="file" class="form-control-file" name="prof-pic" />
@@ -17,8 +23,8 @@
         </div>
         <div class="form-group">
             <label for="email">Change password</label>                    
-            <input class="form-control" type="text" name="password" placeholder="Password" />
-            <input class="form-control" type="text" name="password" placeholder="Confirm password" />
+            <input class="form-control" type="password" name="password" placeholder="Password" />
+            <input class="form-control" type="password" name="password" placeholder="Confirm password" />
         </div>
         <div class="form-group">
             <label for="telephone">Telephone</label>                    
@@ -30,11 +36,7 @@
         </div>     
     </div>
     
-    <div class="form-group">
-        <button type="submit" class="btn btn-danger">Cancel</button>
-        <button type="submit" class="btn btn-success">Save changes</button>
-    </div>
-    
-
+    <button class="btn btn-danger"><a href="/">Cancel</a></button>
+    <button type="submit" class="btn btn-success">Save changes</button>
 
 </form>
