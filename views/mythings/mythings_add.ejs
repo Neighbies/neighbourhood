@@ -3,6 +3,7 @@
         <h2>Add new thing</h2>
    
         <form action="/mythings/add" method="POST">
+
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" class="form-control" name="title" />
@@ -16,7 +17,8 @@
                 <input type="number" class="form-control" name="price" />
             </div>
             <div class="form-group">
-                <input type="file" class="form-control-file" name="thing-pic" />
+                <label for="pic_path">Add a profile picture</label>
+                <input type="file" class="form-control-file" name="pic_path" />
             </div>
 
             <!-- Categories checkbox -->

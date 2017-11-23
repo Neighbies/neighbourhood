@@ -66,7 +66,6 @@ function ensureAuthenticated (req, res, next) {
 router.post('/mythings/add', ensureAuthenticated, (req, res, next) => {
   let categories = [];
   let promises = [];
-  let counter = 0;
   let categoriesUser = req.body.categories;
 
   if (!(req.body.categories instanceof Array)) {
@@ -84,18 +83,25 @@ router.post('/mythings/add', ensureAuthenticated, (req, res, next) => {
           .catch(err => console.log(err))
       );
     });
-    Promise.all(promises).then(() => {
-      console.log(categories);
-    });
-
-// console.log(req.body);
-// const thingInfo = {
-//   title: req.body.title,
-//   localitzation: req.body.localitzation,
-//   price: req.body.price,
-//   categories: categories
-// };
-// res.render('mythings/mythings_add');
-// });
-
+    Promise.all(promises)
+      .then(() => {
+        console.log(categories);
+        const thingInfo = {
+          title: req.body.title,
+          localitzation: req.body.localitzation,
+          price: req.body.price,
+          categories: categories,
+          user: req.user._id
+          // pic_path: `/uploads/${req.body.pic_path}`,
+          // pic_name: req.file.originalname
+        };
+        const newThing = Thing(thingInfo);
+        newThing.save((err) => {
+          return next(err);
+        });
+        res.render('mythings/mythings_add');
+      })
+      .catch(err => console.log(err));
+  }
+});
 module.exports = router;
