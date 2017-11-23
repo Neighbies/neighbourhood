@@ -1,3 +1,12 @@
+<% if (userPic !== undefined) { %>
+    <a href="/profile"><img src="<%=userPic.path%>/<%=userPic.name%>" alt=""></a>
+    <a href="/logout">Logout</a>
+    <a href="/mythings">My things</a>
+ <% } else { %>
+    <a href="/signup">Sign up</a>
+    <a href="/login">Log in</a>    
+ <% } %>
+
 <div>
     <img src="<%= thing.pic_path %>/<%= thing.pic_name %>" alt="">
 </div>
