@@ -1,27 +1,27 @@
 <!-- LIST OF THINGS -->
 <div class="list-things-container">
       
-     <div class="top-bar-things">
+     <div class="top-bar-things top-bar-things-mobile">
        
             <div class="index-searcher things-searcher">
                 <a href="/">
-                     <img class="logo-back-home" src="/pictures/logo-nou-blanc.png"> 
+                     <img class="logo-back-home logo-back-home-mobile" src="/pictures/logo-nou-blanc.png"> 
                  </a>
 
                    <!-- USER INFO -->
-             <div class="user-info-thing-list">
+             <div class="user-info-thing-list user-info-thing-list-mobile">
                 <% if (userPic !== undefined) { %>
-                    <a class= "profile-pic-things-list-a" href="/profile"><img class= "profile-pic-things-list-img" src="<%=userPic.path%>/<%=userPic.name%>" alt=""></a>
-                    <a class= "my-things-things-list" href="/mythings">My things</a>
-                    <a class= "logout-button-things-list" href="/logout">Logout</a>
+                    <a class= "profile-pic-things-list-a profile-pic-things-list-a-mobile" href="/profile"><img class= "profile-pic-things-list-img profile-pic-things-list-img-mobile" src="<%=userPic.path%>" alt=""></a>
+                    <a class= "my-things-things-list my-things-things-list-mobile" href="/mythings">My things</a>
+                    <a class= "logout-button-things-list logout-button-things-list-mobile" href="/logout">Logout</a>
                     
                 <% } else { %>
-                     <a class="signup-button-things-list" href="/signup">Sign up</a>
-                     <a class="login-button-things-list" href="/login">Log in</a>
+                     <a class="signup-button-things-list signup-button-things-list-mobile" href="/signup">Sign up</a>
+                     <a class="login-button-things-list login-button-things-list-mobile" href="/login">Log in</a>
                  <% } %>
              </div> 
-    <!-- SEARCHER -->
-                <nav class="navbar navbar-light navbar-things">
+    <!-- SEARCHER DESKTOP-->
+                <nav class="navbar navbar-light navbar-things navbar-things-desktop">
                     <form class="form-inline form-inline-things" action="/things" method="GET">
                         <input class="form-control mr-sm-2 middle-searcher searcher" name="terms" type="search" placeholder="What are you looking for?"
                         aria-label="Search">
@@ -34,11 +34,18 @@
     </div>
 
     
-    
      
     
-    <div class="things-plus-map">
+    <div class="things-plus-map things-plus-map-flexbox-mobile">
         <div class="things-here">
+            <!-- SEARCHER MOBILE-->
+    <nav class="navbar navbar-light navbar-things navbar-things-mobile">
+            <form class="form-inline form-inline-things form-inline-things-mobile" action="/things" method="GET">
+                <input class="form-control mr-sm-2 middle-searcher searcher middle-searcher-things-mobile" name="terms" type="search" placeholder="What are you looking for?"
+                aria-label="Search">
+                 <button class="btn btn-outline-success my-2 my-sm-0 middle-button button-things button-things-mobile" type="submit">Search</button>
+            </form>
+        </nav>
                 <!-- THINGS HERE -->
                 <% if (data.length === 0) { %>
                     <h4 class="mt-5 ml-5">No neighbours offering this :(<h4>

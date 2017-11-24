@@ -33,15 +33,15 @@
               <a class="login" href="/login">Log in</a>
             </div>
             <% } else { %>
-              <ul id="menu">
+              <ul id="menu" class="big-menu">
                  
 
               
-                <a class="pic-burger-landing-a"href="/profile"><img class="pic-burger-landing-img" src="<%= user.prof_pic_path %>" alt=""></a> 
-                <p class="username-burger-landing"><%= user.username %></p>
-                <a class="my-things-burger-landing"href="/mythings">My things</a>
+                <a class="pic-burger-landing-a pic-burger-landing-a-mobile"href="/profile"><img class="pic-burger-landing-img pic-burger-landing-img-mobile" src="<%= user.prof_pic_path %>" alt=""></a> 
+                <p class="username-burger-landing username-burger-landing-mobile"><%= user.username %></p>
+                <a class="my-things-burger-landing my-things-burger-landing-mobile"href="/mythings">My things</a>
                 <div class="logout-div"></div>
-                <a class="logout-button" href="/logout">Log out</a>
+                <a class="logout-button logout-button-mobile" href="/logout">Log out</a>
               </div>
               <% } %>
         </ul>
