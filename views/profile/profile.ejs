@@ -1,42 +1,49 @@
-<h2>My Profile</h2>
+
+<div class="signup-container">
+<h2 class="my-profile-title my-profile-title-mobile">My Profile</h2>
+
+<div class="signup-box edit-profile">
 
 <% if (typeof message != "undefined") { %>
-    <div class="error-message">
+    <div class="error-message message-error-flash-perfil">
         <%= message %>
     </div>
 <% } %>
 
-<form action="/profile/edit" method="POST">
-    <div class="form-group">
-        <img src="<%= user.prof_pic_path %>" alt="">
+<form class="form-edit-profile edit-profile-mobile" action="/profile/edit" method="POST">
+    <div class="form-group profile-pic-edit-page">
+        <img class="profile-pic-edit-page profile-pic-edit-page-mobile" src="<%= user.prof_pic_path %>" alt="">
+        <div class="inputfileupload">
         <input type="file" class="form-control-file" name="prof_pic_path" />        
+        </div>
     </div>
 
-    <div class="col-3">
-        <div class="form-group">
-            <label for="username">Username</label>                            
-            <input class="form-control" type="text" name="username" value="<%= user.username %>">
+    <div class="form-control-profile form-control-profile-mobile">
+        <div class="form-group form-group-mobile">                        
+            <input class="form-control form-control-profile form-control-profile-mobile" type="text" name="username" value="<%= user.username %>">
         </div>
-        <div class="form-group">
-            <label for="email">Email address</label>            
-            <input class="form-control" type="text" name="email" value="<%= user.email %>" />
+        <div class="form-group form-group-mobile">       
+            <input class="form-control form-control-profile" type="text" name="email" value="<%= user.email %>" />
         </div>
-        <div class="form-group">
-            <label for="email">Change password</label>                    
-            <input class="form-control" type="password" name="password" placeholder="Password" />
-            <input class="form-control" type="password" name="password" placeholder="Confirm password" />
+        <div class="form-group form-group-mobile">                   
+            <input class="form-control form-control-profile form-control-profile-mobile-password " type="password" name="password" placeholder="Password" />
+            <input class="form-control form-control-profile" type="password" name="password" placeholder="Confirm password" />
         </div>
-        <div class="form-group">
-            <label for="telephone">Telephone</label>                    
-            <input class="form-control" type="text" name="telephone" />       
+        <div class="form-group form-group-mobile">                   
+            <input class="form-control form-control-profile" type="text" name="telephone"  placeholder="Telephone number" />       
         </div>
-        <div class="form-group">
-            <label for="location">Location</label>            
-            <input class="form-control" type="text" name="location" /> 
+        <div class="form-group form-group-mobile">        
+            <input class="form-control form-control-profile" type="text" name="location" placeholder="Location"  /> 
         </div>     
     </div>
     
-    <button class="btn btn-danger"><a href="/">Cancel</a></button>
-    <button type="submit" class="btn btn-success">Save changes</button>
+
+    <div class="bottons-save-cancel">
+    <button class="btn btn-danger cancel-changes-mobile"><a  class="cancel-changes cancel-changes-mobile"href="/">Cancel</a></button>
+    <button type="submit" class="btn btn-success save-changes save-changes-mobile">Save changes</button>
+    </div>
 
 </form>
+
+</div>
+</div>

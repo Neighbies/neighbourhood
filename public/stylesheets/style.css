@@ -1435,6 +1435,7 @@ align-content: center;
   .profile-pic-things-one-img{
     width: 50px;
     border-radius: 100%;
+    margin-left: 10px;
   }
 
   .my-things-things-one{
@@ -1507,10 +1508,115 @@ align-content: center;
     color: #F44336;
   }
   
+  /* EDIT MY THINGS */
+
+  .plus-button{
+    font-size: 3em;
+    color: #FF9034;
+    padding: 0;
+    border: 0;
+    background-color: none;
+  }
+
+  .flex-box-edit-things-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+  }
+
+  .button-edit-my-things{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background-color: transparent;
+    color: #FF9034;
+    
+  }
+
+  .edit-my-things-box{
+    padding: 20px;
+  }
+
+  .button-go-back-home-edit-mythings{
+    left: 7%;
+    top: 5.5%;
+  }
+
+  .form-control-file{
+    font-size: 0.8em;
+    color: red;
+  }
+
+  .inputfileupload{
+    margin-top: 3px;
+    position: absolute;
+    right: -104%;
+    
+  }
+
+  .form-control-profile{
+    width: 240px;
+    right: 44%;
+  }
+
+  .bottons-save-cancel{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .save-changes{
+    margin-left: 30px;
+  }
+
+  .edit-profile{
+    height: 630px;
+
+  }
+
+  .cancel-changes{
+    color: white;
+  }
+
+  .cancel-changes:hover{
+    color: white;
+    text-decoration: none;
+  }
+
+  /*-------------------------EDIT PROFILE---------------------------*/
+  .profile-pic-edit-page{
+    border-radius: 100%;
+    width: 100px;
+    position: relative;
+    bottom: 29px;
+  }
+
+  .my-profile-title{
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  .form-edit-profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  .profile-pic-edit-page{
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+
+  .message-error-flash-perfil{
+    position: relative;
+    top: 500px;
+  }
+
 }
-
-
-
 /*-----------------------------------------------------------------------------------------------------------------------QUERY MOBILE---------------------------*/
 
 
@@ -1762,8 +1868,9 @@ align-content: center;
     width: 260px;
   }
 
-  .pic-burger-landing-img-monile{
+  .pic-burger-landing-img-mobile{
     width: 260px;
+    border-radius: 100%;
   }
 
  /*-------------------------THINGS---------------------------*/
@@ -1824,6 +1931,7 @@ align-content: center;
   .profile-pic-things-list-img-mobile{
     width: 170px;
     margin-right: 30px;
+    border-radius: 100%;
   }
 
   .profile-pic-things-list-a-mobile {
@@ -1996,6 +2104,135 @@ align-content: center;
     margin-bottom: 90px;
   }
 
+  /* EDIT MY THINGS */
 
+  .plus-button{
+    font-size: 6em;
+    color: #FF9034;
+    margin-right: 30px;
+  }
+
+  .flex-box-edit-things-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+  }
+
+  .button-edit-my-things{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    left: 21%;
+    background-color: transparent;
+    color: #FF9034;
+    
+  }
+
+  .button-go-back-home-edit-mythings{
+    left: 19%;
+  }
+  .container-edit-my-things-mobile{
+    padding: 50px;
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+  .mobile-card-mythings{
+    width: 100% !important;
+  }
+
+
+  .card-title-mobile{
+  font-size: 3em;
+  }
+
+  .card-text-mobile{
+  font-size: 3em;
+  }
+
+  .card-text-mobile-localization{
+    margin: 0;
+   
+  }
+
+  .card-text-mobile-price{
+    margin: 0;
+    font-size: 3em;
+  }
+
+  .profile-pic-things-one-img{
+  width: 170px;
+  margin-left: 10px;
+  border-radius: 100%;
+  }
+
+  .profile-pic-edit-page-mobile{
+    width: 50%;
+    border-radius: 100%;
+    position: relative;
+    bottom: 130px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  
+
+  .my-profile-title-mobile{
+    font-size: 3em;
+    font-family: 'Roboto Mono', monospace;
+    margin-bottom: 30px;
+  }
+
+  .edit-profile-mobile{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+  }
+
+  .form-control-file{
+    display: none;
+  }
+
+  .form-control-profile-mobile{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;.
+  }
+
+  .cancel-changes-mobile{
+  font-size: 1.9em;
+  border-radius: 15px;
+  color: white;
+
+  }
+
+  .save-changes-mobile{
+    font-size: 3.2em;
+    border-radius: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 30px;
+  }
+
+  .form-group-mobile{
+    height: 109px;
+  }
+
+  .form-control-profile-mobile-password{
+    
+  }
 
 }
