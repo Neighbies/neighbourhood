@@ -49,7 +49,7 @@ router.post('/signup', (req, res, next) => {
       username: usernameInput,
       email: emailInput,
       password: hashPass,
-      prof_pic_path: '/pictures',
+      prof_pic_path: '/pictures/profile/avatar.png',
       prof_pic_name: 'avatar.png'
     });
 

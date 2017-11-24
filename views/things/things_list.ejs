@@ -1,5 +1,4 @@
 <!-- LIST OF THINGS -->
-
 <div class="list-things-container">
       
      <div class="top-bar-things">
@@ -41,6 +40,9 @@
     <div class="things-plus-map">
         <div class="things-here">
                 <!-- THINGS HERE -->
+                <% if (data.length === 0) { %>
+                    <h4 class="mt-5 ml-5">No neighbours offering this :(<h4>
+                <% } %>
                 <% data.forEach(thing => { %>
                 <div class="thing-itself">
                     <a class="thing-link" href="/things/<%=thing.id%>">
