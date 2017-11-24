@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const bcryptSalt = 10;
+const multer = require('multer');
 
 // --- GET home page --- //
 router.get('/profile', ensureAuthenticated, (req, res, next) => {
@@ -13,25 +14,22 @@ router.get('/profile', ensureAuthenticated, (req, res, next) => {
 router.post('/profile/edit', (req, res, next) => {
   const userId = req.user._id;
   let passInput = req.user.password;
-  let prof_pic_pathInput = req.user.prof_pic_path;
-  let prof_pic_nameInput = req.user.prof_pic_name;
+  let profPicPath = req.user.prof_pic_path;
 
   if (!confirmPassword(req.body.password)) {
     res.render('profile/profile', { user: req.user, message: "Password didn't match" });
     return;
   }
-  if (req.body.password[0] != '') {
+  if (req.body.password[0] !== '') {
     const salt = bcrypt.genSaltSync(bcryptSalt);
     const hashPass = bcrypt.hashSync(req.body.password[0], salt);
     passInput = hashPass;
   }
   if (req.file !== undefined) {
-    prof_pic_pathInput = `/uploads/${req.file.filename}`;
-    prof_pic_nameInput = req.file.originalname;
+    profPicPath = `/pictures/profile/${req.file.filename}`;
   }
   const userUpdate = {
-    prof_pic_path: prof_pic_pathInput,
-    prof_pic_name: prof_pic_nameInput,
+    prof_pic_path: profPicPath,
     username: req.body.username,
     email: req.body.email,
     password: passInput,
