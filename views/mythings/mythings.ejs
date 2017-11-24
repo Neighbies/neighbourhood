@@ -1,9 +1,9 @@
-<% if (things === undefined) { %>
+<% if (things.length === 0) { %>
     <p>You don't have any things yet</p>
-<% } else { %>
-    <form action="/mythings/add" action="POST">
-        <button type="submit" class="btn btn-default"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
-    </form>
+<% } %>
+<form action="/mythings/add" action="POST">
+    <button type="submit" class="btn btn-default"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+</form>
     <% things.forEach(thing => { %>
         <div class="card" style="width:20rem;">
             <img class="thing-img card-img-top" src="<%= thing.pic_path %>" alt="">
@@ -18,7 +18,7 @@
             </div>
         </div>
     <% }); %>
-<% } %>
+
  
 
 

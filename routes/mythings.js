@@ -14,6 +14,7 @@ router.get('/mythings', ensureAuthenticated, (req, res, next) => {
     const data = {
       things: result
     };
+    console.log(data);
     res.render('mythings/mythings', data);
   });
 });
@@ -107,7 +108,6 @@ router.post('/mythings/add', ensureAuthenticated, (req, res, next) => {
 // --- POST delete My Thing --- //
 router.post('/mythings/delete/:thingId', ensureAuthenticated, (req, res, next) => {
   const thingId = req.params.thingId;
-  console.log(thingId);
   Thing.findByIdAndRemove(thingId, (err, thing) => {
     if (err) {
       return next(err);
