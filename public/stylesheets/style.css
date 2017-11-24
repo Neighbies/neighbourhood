@@ -1507,6 +1507,11 @@ align-content: center;
     font-size: 2em;
     color: #F44336;
   }
+
+  .roboto {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2rem;
+  }
   
   /* EDIT MY THINGS */
 
