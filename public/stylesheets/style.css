@@ -868,11 +868,11 @@ width: 50%;
   margin-right: 30px;
 }
   
-.form-control::placeholder {
+/* .form-control::placeholder {
   color: #868e96;
   opacity: 1;
   font-size: 0.8em !important;
-}
+} */
   
 .form-control {
   display: block;
@@ -910,9 +910,9 @@ align-content: center;
   color: #FF9034;
   font-weight: 700;
   font-size: 1.8em;
-  width: 30%;
+  width: 70%;
   line-height: 38px;
-  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .one-thing-price{
@@ -1015,11 +1015,11 @@ align-content: center;
     margin-top: 180px;
   }
   
-  .form-control::placeholder {
+  /* .form-control::placeholder {
     color: #868e96;
     opacity: 1;
     font-size: 0.8em !important;
-  }
+  } */
   
   .form-control {
     display: block;
@@ -1116,9 +1116,9 @@ align-content: center;
     height: 77%;
   }
 
-  .form-group::placeholder {
+  /* .form-group::placeholder {
     font-size: 2.4em !important;
-  }
+  } */
 
 
   /*---------ERROR PAGE---------*/
@@ -1250,7 +1250,9 @@ align-content: center;
     
   }
 
-
+  .navbar-things-mobile{
+    display: none;
+  }
 
 
   .list-of-things{
@@ -1510,7 +1512,7 @@ align-content: center;
 
   /*-------------------------BOOTSTRAP SEARCHER---------------------------*/
   .middle-button {
-    height: 80px;
+    height: 92px;
     width: 160px;
     background-color: #28a745;
     color: white;
@@ -1533,14 +1535,14 @@ align-content: center;
   
   }
   
-  .form-control::placeholder {
+  /* .form-control::placeholder {
     color: #868e96;
     opacity: 1;
     font-size: 2.4em !important;
-  }
+  } */
   
   .mr-sm-2{
-    height: 50%;
+    height: 61%;
   }
   
   .navbar {
@@ -1562,6 +1564,36 @@ align-content: center;
 
   .navbar-things{
     width: 900px;
+  }
+
+
+  .navbar-things-mobile{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .navbar-things-desktop{
+    display: none;
+  }
+
+
+
+  .form-inline-things-mobile{
+    width: 153%;
+  }
+
+  .middle-searcher-things-mobile{
+    width: 100% !important;
+    margin-bottom: 30px;
+  }
+
+  .button-things-mobile{
+  width: 100%;  
+  margin-bottom: 200px !important;
+  font-size: 2.5em;
   }
 
 
@@ -1620,6 +1652,22 @@ align-content: center;
     margin-bottom: 1rem;
     height: 20%;
     width: 70%;
+
+  }
+
+  input[type=password]{
+    font-size: 2.4em;
+
+  }
+
+  input[type=text]{
+    font-size: 2.44em;
+
+  }
+
+  input[type=search]{
+    font-size: 2.44em;
+
   }
 
   .form-group > input{
@@ -1667,7 +1715,50 @@ align-content: center;
     font-size: 3em;
   }
 
+  .big-menu {
+    width: 980px !important;
+    height: 870px !important;
+  }
 
+  .logout-button-mobile{
+    padding: 30px;
+    font-size: 2.6em !important;
+    border-radius: 17px;
+    position: relative;
+    top: 110px;
+  }
+
+  .my-things-burger-landing-mobile{
+    font-size: 2.6em !important;
+    background-color: #CFD8DC;
+    color: #263238;
+    padding: 11px;
+    border-radius: 17px;
+    margin-bottom: 20px;
+    padding: 30px;
+    position: relative;
+    top: 10px;
+  }
+
+  .my-things-burger-landing-mobile:hover{
+    font-size: 2.6em !important;
+    text-decoration: none;
+    color: white;
+    background-color: #E65100;
+  }
+
+  .username-burger-landing-mobile{
+    font-size: 6em !important;
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  .pic-burger-landing-a-mobile{
+    width: 260px;
+  }
+
+  .pic-burger-landing-img-monile{
+    width: 260px;
+  }
 
  /*-------------------------THINGS---------------------------*/
   .thing-itself {
@@ -1692,6 +1783,7 @@ align-content: center;
   .thing-img{
     width: 100%;
     height: auto;
+    border-radius: 30px;
   }
   
   .things-here{
@@ -1699,12 +1791,202 @@ align-content: center;
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
-}
+  }
 
-button, .btn-primary {
-  cursor: pointer;
-}
+  button, .btn-primary {
+    cursor: pointer;
+  }
+
+  .things-plus-map-flexbox-mobile{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .top-bar-things-mobile{
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .logo-back-home-mobile{
+    width: 150px;
+    height: auto;
+    margin-right: 30px;
+  }
+
+  .profile-pic-things-list-img-mobile{
+    width: 170px;
+    margin-right: 30px;
+  }
+
+  .profile-pic-things-list-a-mobile {
+    width: 170px;
+    margin-right: 30px;
+  }
+
+  .logout-button-things-list-mobile{
+    cursor: pointer;
+    color: white;
+    background-color: #d84734;
+    padding: 30px 50px;
+    border-radius: 14px;
+    top: 14px;
+    font-size: 2em;
+    
+  }
+
+  .logout-button-things-list-mobile:hover{
+    text-decoration: none;
+    background-color: #D50000;
+    color: white;
+  }
+
+  .my-things-things-list-mobile{
+    font-size: 2em !important;
+    background-color: #CFD8DC;
+    color: #263238;
+    padding: 11px;
+    border-radius: 17px;
+    margin-bottom: 20px;
+    padding: 30px 50px;
+    position: relative;
+    top: 10px;
+    margin-right: 30px;
+  }
+
+  .my-things-things-list-mobile:hover{
+    font-size: 2.6em !important;
+    text-decoration: none;
+    color: white;
+    background-color: #E65100;
+  }
+
+  .user-info-thing-list-mobile{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+  }
+
+  .signup-button-things-list-mobile{
+    font-size: 2em !important;
+    background-color: #CFD8DC;
+    color: #263238;
+    padding: 11px;
+    border-radius: 17px;
+    margin-bottom: 20px;
+    padding: 30px 50px;
+    position: relative;
+    top: 10px;
+    margin-right: 30px;
+  }
+  
+  .login-button-things-list-mobile{
+    font-size: 2em !important;
+    background-color: #CFD8DC;
+    color: #263238;
+    padding: 11px;
+    border-radius: 17px;
+    margin-bottom: 20px;
+    padding: 30px 50px;
+    position: relative;
+    top: 10px;
+    margin-right: 30px;
+  }
 
 
+  .signup-button-things-list-mobile:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #E65100;
+  }
+  
+  .login-button-things-list-mobile:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #E65100;
+  }
+
+
+
+   /*-------------------------THING---------------------------*/
+  .thing-thing-mobile{
+  display: flex;
+  flex-direction: column;
+  }
+
+  .thing-chart-mobile{
+    margin-top: 140px;
+  }
+
+  .thing-title-mobile{
+    font-size: 5em;
+    line-height: 120px;
+  }
+
+  .thing-atributes-mobile{
+
+  }
+
+  .other-atributes-thing-mobile{
+    font-size: 3em;
+  }
+
+  .one-thing-price-mobile{
+    font-size: 4em;
+  }
+
+  .thing-description-thing-mobile{
+    margin-top: 150px;
+    font-size: 3em;
+    width: 100%;
+  }
+
+  .contact-chart-mobile{
+    width: 100%;
+    width: 100%;
+    position: relative;
+    top: 100%;
+    bottom: 0%;
+    margin-top: 321px;
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  .card-mobile{
+    width: 100% !important;
+    height: auto;
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  .list-group-mobile{
+    font-size: 3em;
+    color: #90A4AE
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  .message-me-mobile{
+    color: #FF9034;
+    font-size: 2em;
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  .login-to-contact-mobile{
+    font-size: 1em !important;
+    background-color: #24A753;
+    color: white;
+    padding: 11px;
+    border-radius: 17px;
+    margin-bottom: 20px;
+    padding: 30px 50px;
+    position: relative;
+    top: 10px;
+    margin-right: 30px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .card-text-mobile{
+    margin-bottom: 90px;
+  }
 
 }

@@ -2,20 +2,20 @@
 <!-- THING -->
 
 <div class="thing-container">
-    <div class="top-margin-thing">
+    <div class="top-margin-thing top-bar-things-mobile">
         <a class="go-landing" href="/">
-            <img class="logo-menu-thing" src="/pictures/logo-nou-blanc.png">
+            <img class="logo-menu-thing logo-back-home-mobile" src="/pictures/logo-nou-blanc.png">
         </a>
-        <div class="user-info-thing-one">
+        <div class="user-info-thing-one user-info-thing-list-mobile">
                 <% if (userPic !== undefined) { %>
-                    <a class= "profile-pic-things-one-a" href="/profile"><img class= "profile-pic-things-one-img" src="<%=userPic.path%>/<%=userPic.name%>" alt=""></a>
-                    <a class= "my-things-things-one" href="/mythings">My things</a>
-                    <a class= "logout-button-things-one"href="/logout">Logout</a>
+                    <a class= "profile-pic-things-one-a profile-pic-things-list-a-mobile" href="/profile"><img class= "profile-pic-things-one-img" src="<%=userPic.path%>/<%=userPic.name%>" alt=""></a>
+                    <a class= "my-things-things-one my-things-things-list-mobile" href="/mythings">My things</a>
+                    <a class= "logout-button-things-one logout-button-things-list-mobile"href="/logout">Logout</a>
                     
                  <% } else { %>
 
-                    <a class="signup-button-things-one"href="/signup">Sign up</a>    
-                    <a class="login-button-things-one"href="/login">Log in</a>    
+                    <a class="signup-button-things-one signup-button-things-list-mobile"href="/signup">Sign up</a>    
+                    <a class="login-button-things-one login-button-things-list-mobile"href="/login">Log in</a>    
                  <% } %>
         </div>
 
@@ -23,33 +23,32 @@
 
    
 
-    <div class="flex-box-thing-thing">
+    <div class="flex-box-thing-thing thing-thing-mobile">
 
 
-        <div class="thing-chart">
-            <div class="thing-pic-chart">
+        <div class="thing-chart thing-chart-mobile">
+            <div class="thing-link">
                 <img class="thing-img"src="<%= thing.pic_path %>" alt="">
             </div>
 
-            <div class="thing-atributes">
-                
-                    <p class="other-atributes-thing">
-                        <%=user.username%>
-                    </p>
-                    <p class="other-atributes-thing">
-                        <%=thing.localitzation%>
-                    </p>
-                    <p class="one-thing-price">
-                        <%=thing.price%> €
-                    </p>
-                
-            </div>   
-
-            <div class="thing-title-thing">
+            <div class="thing-title-thing thing-title-mobile">
                     <%=thing.title%>
             </div>
+            <div class="thing-atributes thing-atributes-mobile">
+                    
+                        <p class="other-atributes-thing other-atributes-thing-mobile">
+                            <%=user.username%>
+                        </p>
+                        <p class="other-atributes-thing other-atributes-thing-mobile">
+                            <%=thing.localitzation%>
+                        </p>
+                        <p class="one-thing-price one-thing-price-mobile">
+                            <%=thing.price%> €
+                        </p>
+                    
+                </div>   
 
-            <div class="thing-description-thing">
+            <div class="thing-description-thing thing-description-thing-mobile ">
                 <p>
                     <%=thing.description%>
                 </p>
@@ -60,24 +59,24 @@
 
 
 
-        <div class="contact-chart">
+        <div class="contact-chart contact-chart-mobile ">
            
 
 
                           <% if (!loggedIn) { %>
-                            <div class="card" style="width: 20rem;">
-                            <div class="card-body">
-                            <h4 class="card-title">Contact me</h4>
-                          <p class="card-text">Remember that, if you want to contact this neighbour, you'll have to log in first.</p>
-                          <a class="login-to-contact" href="/login" class="card-link">Log in to contact</a>
+                            <div class="card card-mobile" style="width: 20rem;">
+                            <div class="card-body list-group-mobile">
+                            <h4 class="card-title message-me-mobile">Contact me</h4>
+                          <p class="card-text card-text-mobile">Remember that, if you want to contact this neighbour, you'll have to log in first.</p>
+                          <a class="login-to-contact login-to-contact-mobile " href="/login" class="card-link">Log in to contact</a>
                         </div>
                       </div>
                 
                       <% } else { %>
 
-                        <div class="card" style="width: 20rem;">
-                                <ul class="list-group list-group-flush">
-                                  <li class="list-group-item message-me">Message me!</li>
+                        <div class="card card-mobile" style="width: 20rem;">
+                                <ul class="list-group list-group-flush list-group-mobile">
+                                  <li class="list-group-item message-me message-me-mobile">Message me!</li>
                                   <li class="list-group-item"> <%=user.email%> </li>
                                   <li class="list-group-item"> <%=user.telephone%> </li>
                                 </ul>
