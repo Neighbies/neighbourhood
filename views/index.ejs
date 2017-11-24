@@ -21,9 +21,11 @@
         <span></span>
         <span></span>
 
+
+        <% if (!loggedIn) { %>
         <ul id="menu">
 
-          <% if (!loggedIn) { %>
+          
             <div class="signup-div">
               <a class="signup" href="/signup">Sign up</a>
             </div>
@@ -31,6 +33,9 @@
               <a class="login" href="/login">Log in</a>
             </div>
             <% } else { %>
+              <ul id="menu" style="@media (orientation:portrait) {width:500px;height:500px;}">
+                 
+
               
                 <a class="pic-burger-landing-a"href="/profile"><img class="pic-burger-landing-img" src="<%= user.prof_pic_path %>/<%= user.prof_pic_name %>" alt=""></a> 
                 <p class="username-burger-landing"><%= user.username %></p>

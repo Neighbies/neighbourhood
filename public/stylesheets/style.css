@@ -361,8 +361,9 @@ background-color: #FFA726;
  * Make this absolute positioned
  * at the top left of the screen
  */
-#menu
-{
+
+ 
+ #menu {
   position: absolute;
   width: 207px;
   margin: -100px 0 0 -50px;
@@ -372,12 +373,11 @@ background-color: #FFA726;
   background: #FFFFFFD9;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
   border-radius: 5px;
-}
+} 
 
 #menu li
 {
@@ -1116,6 +1116,10 @@ align-content: center;
     height: 77%;
   }
 
+  .form-group::placeholder {
+    font-size: 2.4em !important;
+  }
+
 
   /*---------ERROR PAGE---------*/
   .logo-error-page{
@@ -1165,11 +1169,29 @@ align-content: center;
     background-color: #E65100;
   }
 
-.logout-div{
-  margin-top: 20px;
-}
+  .logout-div{
+    margin-top: 20px;
+  }
 
+  .menu-burger{
+    width: 2000px;
+  }
 
+  #menu {
+    position: absolute;
+    width: 207px;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    
+    background: #FFFFFFD9;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    border-radius: 5px;
+  }
 
   /*---------CATEGORIES---------*/
   .categories{
@@ -1336,7 +1358,11 @@ align-content: center;
 
 
 
-
+  .thing-location{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9em;
+    color: #90A4AE;
+  }
 
 
 
@@ -1377,7 +1403,10 @@ align-content: center;
     background-color: #E65100;
   }
 
-
+  .thing-img{
+    border-radius: 10px;
+    width: 270px;
+  }
 
 
 
@@ -1637,7 +1666,6 @@ align-content: center;
   .signup-div > a, .login-div > a {
     font-size: 3em;
   }
-
 
 
 
