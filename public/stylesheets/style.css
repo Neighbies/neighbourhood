@@ -765,8 +765,12 @@ footer{
 }
 
 .logo-back-home{
-  width: 50px;
+  width: 60px;
   height: auto;
+  margin-right: 30px;
+  right: 40%;
+  position: relative;
+
 }
 
 
@@ -1153,6 +1157,7 @@ align-content: center;
   .pic-burger-landing-img{
     width: 70px;
     margin-bottom: 10px;
+    border-radius: 100%;
   }
 
   .my-things-burger-landing{
@@ -1328,6 +1333,7 @@ align-content: center;
   }
   .profile-pic-things-list-img{
     width: 50px;
+    border-radius: 100%;
   }
 
 
@@ -1428,6 +1434,7 @@ align-content: center;
 
   .profile-pic-things-one-img{
     width: 50px;
+    border-radius: 100%;
   }
 
   .my-things-things-one{
@@ -1808,9 +1815,10 @@ align-content: center;
   }
 
   .logo-back-home-mobile{
-    width: 150px;
+    width: 120px;
     height: auto;
-    margin-right: 30px;
+    margin-right: 10px;
+    margin-left: 50px;
   }
 
   .profile-pic-things-list-img-mobile{
