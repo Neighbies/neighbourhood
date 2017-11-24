@@ -48,7 +48,7 @@ function startMap () {
           resultsMap.setCenter(results[0].geometry.location);
           var marker = new google.maps.Marker({
             map: resultsMap,
-            label: String(thing.price + '$'),
+            label: String(thing.price + '€'),
             position: results[0].geometry.location,
             icon: '/pictures/chat5.png'
           });

@@ -68,11 +68,8 @@ router.post('/mythings/add', ensureAuthenticated, (req, res, next) => {
   let promises = [];
   let categoriesUser = req.body.categories;
 
-  if (!(req.body.categories instanceof Array)) {
-    categoriesUser = req.body.categories.split(' ');
-  }
-
   if (categoriesUser !== undefined) {
+    categoriesUser = req.body.categories.split(' ');
     categoriesUser.forEach(category => {
       promises.push(
         Category.find({title: category})
@@ -83,25 +80,40 @@ router.post('/mythings/add', ensureAuthenticated, (req, res, next) => {
           .catch(err => console.log(err))
       );
     });
-    Promise.all(promises)
-      .then(() => {
-        console.log(categories);
-        const thingInfo = {
-          title: req.body.title,
-          localitzation: req.body.localitzation,
-          price: req.body.price,
-          categories: categories,
-          user: req.user._id
-          // pic_path: `/uploads/${req.body.pic_path}`,
-          // pic_name: req.file.originalname
-        };
-        const newThing = Thing(thingInfo);
-        newThing.save((err) => {
-          return next(err);
-        });
-        res.render('mythings/mythings_add');
-      })
-      .catch(err => console.log(err));
   }
+
+  Promise.all(promises)
+    .then(() => {
+      console.log(categories);
+      const thingInfo = {
+        title: req.body.title,
+        localitzation: req.body.localitzation,
+        price: req.body.price,
+        categories: categories,
+        user: req.user._id,
+        pic_path: `/pictures/things-pictures/${req.body.pic_path}`
+        // pic_name: req.file.originalname
+      };
+      const newThing = Thing(thingInfo);
+      newThing.save((err) => {
+        return next(err);
+      });
+      res.redirect('/mythings');
+    })
+    .catch(err => console.log(err));
+  // }
 });
+
+// --- POST delete My Thing --- //
+router.post('/mythings/delete/:thingId', ensureAuthenticated, (req, res, next) => {
+  const thingId = req.params.thingId;
+  console.log(thingId);
+  Thing.findByIdAndRemove(thingId, (err, thing) => {
+    if (err) {
+      return next(err);
+    }
+    return res.redirect('/mythings');
+  });
+});
+
 module.exports = router;

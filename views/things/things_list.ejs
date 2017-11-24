@@ -44,7 +44,7 @@
                 <% data.forEach(thing => { %>
                 <div class="thing-itself">
                     <a class="thing-link" href="/things/<%=thing.id%>">
-                         <img class="thing-img" src="<%= thing.pic_path %>/<%= thing.pic_name %>" alt="">
+                         <img class="thing-img" src="<%= thing.pic_path %>" alt="">
                      </a>
                      <p class="thing-description">
                          <%= thing.title %> <%= thing.localitzation %>
